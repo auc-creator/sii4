@@ -1,0 +1,47 @@
+[SECTION CONFIG]    'Formato de impresion para
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:TODOS]
+[/SECTION]
+[SECTION HEADER]
+%(LIN;3) $(SPACE;0)
+$(SPACE;5)%(EF1)$(NOMEMP;30) %(EF0) $(SPACE;15)%(EF1)RUC:$(RUCEMP;15) %(EF0)
+$(SPACE;8)%(CD1)$(DR1EMP;35) %(CD0) 
+$(SPACE;13)%(CD1)Telf:$(TL1EMP;15) %(CD0) $(SPACE;25)%(CD1)AUTORIZACION SRI No. $(NUMAUTSRIA;15) %(CD0)
+$(SPACE;14)%(CD1)CUENCA-ECUADOR%(CD0) $(SPACE;28)%(CD1) Valido Hasta: $(FECHACADU;15;mmm-yyyy) %(CD0)
+$(SPACE;2)%(CD1)
+%(LIN;5)$(SPACE;18)$(SPACE;3)%(EF1)COMPROBANTE DE RETENCION No. $(NUMSERIEEST;3)-$(NUMSERIEPUN;3)-$(NUMTRANSERIE;7)%(EF0)
+$(SPACE;2)
+$(SPACE;2)Nombre:    $(NOMPROV;45) $(SPACE;10) Fecha Emisión: $(FECHATRANS;25;DD/MMMM/YYYY) %(LIN;4)
+$(SPACE;2)R.U.C.:    $(RUCPROV;20) $(SPACE;35) Tipo de Comprobante de Venta: Factura
+$(SPACE;2)Dirección: $(DIRPROV;40) $(SPACE;15) No. Comprobante de Venta: %(LIN;0.1)
+[/SECTION]
+[SECTION RETENCION;LINEA=1;CAMBIOPAG=F;PARAMETROS=TODOS]
+                                                                                                 $(NUMDOC;13) 
+[/SECTION] 
+%(LIN;3) $(SPACE;0) 
+------------------------------------------------------------------------------------------------------------------------
+$(SPACE;5)Ejercicio $(SPACE;10)   Base Imponible  $(SPACE;10) Impuesto $(SPACE;10)   % de    $(SPACE;10) Valor Retenido 
+$(SPACE;5)  Fiscal  $(SPACE;10) para la Retención $(SPACE;10)          $(SPACE;10) Retención $(SPACE;10)
+------------------------------------------------------------------------------------------------------------------------ %(LIN;4)
+[SECTION RETENCION;LINEA=7;CAMBIOPAG=F;PARAMETROS=TODOS]
+        $(EJEFISCAL;4;YYYY)             $(BASE;12;2)             $(DESC;20)       $(PORCENT;4)             $(HABER;12;2)
+[/SECTION]
+------------------------------------------------------------------------------------------------------------------------%(CD0)
+$(SPACE;35)%(EF1) TOTAL RETENIDO: $(TOTRET;10;2) %(EF0)
+$(SPACE;0)%(CD1) 
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;40)-----------------------------
+$(SPACE;40)Firma del Agente de Retención
+ORIGINAL - ADQUIRIENTE
+COPIA  - EMISOR%(CD0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)

@@ -1,0 +1,24 @@
+[SECTION CONFIG]    'Formato de impresion para DICOMSA (Devolucion de Cliente)
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 34     'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+%(EF0)%(CD1)%(LIN;18)$(SPACE;0)  '5 milimetros  cada linea (considerar  5mm de traccion de papel)
+[SECTION HEADER]
+%(LIN;5)$(SPACE;71)FCV: $(NUMTRANS;7)
+$(SPACE;12)$(FECHATRANS;2;dd) $(FECHATRANS;10;mmm) $(FECHATRANS;4;yyyy)$(SPACE;70)$(PTOTAL2;12;2)
+$(SPACE;12)$(NOMCLI;53)$(SPACE;37)$(RUCCLI;20)
+$(SPACE;12)$(DIRCLI;55)  '$(SPACE;11) $(TELCLI;15)
+$(SPACE;0)
+[/SECTION]
+%(LIN;5)    '5  milimetros  cada linea 
+[SECTION ITEM;LINEA=9;CAMBIOPAG=T]   ' Siempre  ocupa 8 lineas
+  $(CODITEM;14)  $(DESCITEM;55)  $(CANT;10;2)  $(PU;11)  $(PORDESC;9;2)  $(PT;14)
+[/SECTION]
+%(LIN;4)$(SPACE;30)$(NUMTRANSFUENTE;10)$(SPACE;73)$(PTOTAL1;12;2)     'Subtotal
+$(SPACE;113)$(RECAR;12;2;DESC)  'Descuento
+$(SPACE;113)$(TOTALSINIVA;12;2) 'Total de items sin IVA
+$(SPACE;113)$(TOTALCONIVA;12;2) 'Total de items con IVA
+$(SPACE;103)12$(SPACE;8)$(RECAR;12;2;IVA)'IVA
+$(SPACE;113)$(PTOTAL2;12)%(LIN;5)'Total factura%

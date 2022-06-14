@@ -1,0 +1,16 @@
+[SECTION CONFIG]    'Formato de impresion para efsa busines 27-Oct-2004
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION HEADER]
+%(CD1)%(EX0)%(LIN;10)
+$(SPACE;30)%(LIN;4)
+%(SB1)$(SPACE;5)Pos.$(SPACE;2)CODIGO$(SPACE;2) MARCA $(SPACE;12) DESCRIPCION $(SPACE;37) CANT $(SPACE;4) P.UNIT $(SPACE;3) P. TOTAL%(SB0)
+[/SECTION]
+[SECTION ITEM;LINEA=0;CAMBIOPAG=F]
+     $(NUMLIN;2) $(CODBOD;10)  $(CODITEM;9)   $(CODGRUPO2;4)   $(DESCITEMIVA;56)   $(CANT;4;0)     $(PUR;8;2)     $(PTR;8;2)
+[/SECTION]
+$(PESOTOTALNETO;mm;nn)	‘Suma de peso neto
+%(SPG)

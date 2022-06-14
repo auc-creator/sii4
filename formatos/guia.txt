@@ -1,0 +1,35 @@
+'IMPRESION DE GUIA DE REMISION para P.P.OSPINA
+[SECTION CONFIG]    'Formato de impresión de compra
+MODO = T   ' Indica  si es modo texto  o gráfico
+NUMLINEA = 120     'Numero de líneas  totales
+IGNORACONTROL = F
+HEADERTODO=T
+[/SECTION]
+[SECTION PARAMETROS;MOTIVTRASL:1,x;MOTIVTRASL:2,x;MOTIVTRASL:3,x;MOTIVTRASL:4,x]
+[/SECTION])
+[SECTION HEADER]
+%(LIN;13) $(SPACE;0) 
+$(SPACE;0) 
+$(SPACE;0) %(LIN;5)  %(CD1)
+$(CARGARMOTIVTRASL;Venta,Compra,Otros,Devolución)
+$(SPACE;35) $(FECINITRASL;25;dd/mm/yy) $(SPACE;40) $(FECFINTRASL;25;dd/mm/yy)  
+$(SPACE;0) %(LIN;4)
+$(SPACE;0)
+$(SPACE;0) %(LIN;5)
+$(SPACE;13) $(MOTIVTRASL;3;1) $(SPACE;25) $(MOTIVTRASL;3;2) $(SPACE;25) $(MOTIVTRASL;3;3) $(SPACE;25) $(MOTIVTRASL;3;4) %(LIN;4) 
+$(SPACE;0)  
+$(SPACE;22) $(FECEMISION;25;dd/mm/yy) $(SPACE;20) $(PTOPART;30) %(LIN;5)
+$(SPACE;0) %(LIN;7)
+$(SPACE;22) $(NOMDEST;50) $(SPACE;30) $(RUCDEST;15)
+$(SPACE;22) $(PTOLLEG;75) %(LIN;5) 
+$(SPACE;0) 
+$(SPACE;22) $(NOMTRANSP;50) $(SPACE;30) $(RUCTRANSP;15) %(LIN;8)
+$(SPACE;0) %(LIN;4)
+$(SPACE;10)CODIGO $(SPACE;10)DESCRIPCION $(SPACE;43)CANTIDAD
+______________________________________________________________________________________________________
+[/SECTION]
+[SECTION ITEM;LINEA=1;CAMBIOPAG=T]   
+    $(NUMLIN;10;0)  $(CODITEM;10;0)
+[/SECTION]
+$(SPACE;70)$(CANTTTL;20)
+

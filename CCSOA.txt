@@ -1,0 +1,65 @@
+[SECTION CONFIG]    'Formato de impresion para PUNTO DE VENTA 29/09/04 jeaa
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+MARGENIZQ=0
+[/SECTION]
+[SECTION HEADER]
+%(CMD;27-64)%(LIN;2.5)
+$(SPACE;7)%(CMD;27-33-24)$(NOMEMP;21)%(CMD;27-33-9)
+$(SPACE;5)%(CMD;27-33-24)CIERRE DE CAJA $(CODTRANS;5) #$(NUMTRANS;8)%(CMD;27-33-9)
+FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+POR CONCEPTO DE: 
+ $(DESCTRANS;60)
+[/SECTION]
+
+DETALLE CREDITOS
+----------------------------------------
+TRANS      NOMBRE                  VALOR
+----------------------------------------
+[SECTION DETVCREDITO; LINEA=0; CAMBIOPAG=F]
+$(DESC;35) 
+$(TRANS;16) $(NOMBRE;20) $(VALOR;12;2)
+[/SECTION]
+----------------------------------------
+TOTAL EFECTIVO:            $(TOTALDETEFECTIVO;12;2)
+TOTAL TARJETAS:            $(TOTALDETTARJETA;12;2)
+TOTAL CHEQUES :            $(TOTALDETCHEQUE;12;2)
+TOTAL MANUALES:            $(TOTALDETVMANUAL;12;2)
+TOTAL CREDITOS:            $(TOTALDETVCREDITO;12;2)
+                    ____________________
+TOTAL INGRESOS:            $(TOTALDETINGRESOS;12;2)
+
+DETALLE EGRESOS
+----------------------------------------
+DESCRIPCION
+TRANS      NOMBRE                  VALOR
+----------------------------------------
+[SECTION DETEGRESO; LINEA=0; CAMBIOPAG=F]
+$(DESC;35) 
+$(TRANS;6) $(NOMBRE;20) $(VALOR;12;2)
+[/SECTION]
+                    ____________________
+TOTAL EGRESOS:            $(TOTALDETEGRESOS;12;2)
+
+TOTAL CIERRE:             $(TOTALCIERRECAJA;12;2)
+
+TOTAL DEPOSITO:          %(CMD;27-33-24)$(TOTALDEPOSITOCIERRECAJA;12;2)%(CMD;27-33-9)
+
+
+______________________	             
+%(CMD;27-33-24)$(CODUSUARIO;20)%(CMD;27-33-9)
+$(SPACE;1)
+$(DETALLETRANSIV;40)
+
+******* GRACIAS POR PREFERIRNOS *******
+*IMPRIME ISHIDA & ASOCIADOS 072833766**
+*********** 098499003 *****************
+*** SISTEMAS DE GESTION EMPRESARIAL ***
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)

@@ -1,0 +1,35 @@
+[SECTION CONFIG]    'Formato de impresión de compra 'IMPRESION DE GUIA DE REMISION
+MODO = T   ' Indica  si es modo texto  o gráfico
+NUMLINEA = 45     'Numero de líneas  totales
+IGNORACONTROL = F
+HEADERTODO=T
+[/SECTION]
+[SECTION PARAMETROS]
+MOTIVO_TRASL(Texto,Texto,Texto,Texto,Texto,Texto,Texto,Texto,Texto,Texto)
+[/SECTION]
+[SECTION HEADER]
+%(LIN;5) %(EX1) %(EF1) $(NOMEMP;45)  %(EF0) %(EX0)
+%(CD1) Dir. $(DR1EMP;50) $(SPACE;10) %(CD0) %(EF1) GUIA DE REMISION  %(EF0)
+%(CD1) Tel. $(TL1EMP;15)
+$(SPACE;0) %(LIN;5)
+$(CARGARMOTIVTRASL;Venta,Compra,Transformación,Consignación,Traslado entre establecimientos de una misma empresa,Traslado por emisor itinerante de comprobantes de venta,Devolución,Importación,Exportación,Otros)
+Fecha de Iniciación del Traslado:  $(FECINITRASL;25;dd/mm/yy) $(SPACE;9) Comprobante de Venta:  $(COMPVTA;10)
+Fecha de Terminación del Traslado:  $(FECFINTRASL;25;dd/mm/yy) $(SPACE;8) Fecha de Emisión: $(FECEMISION;25;dd/mm/yy) 
+Motivo del traslado: $(MOTIVO_TRASL;6;1)$(MOTIVO_TRASL;7;2)$(MOTIVO_TRASL;14;3)$(MOTIVO_TRASL;12;4)$(MOTIVO_TRASL;50;5)$(MOTIVO_TRASL;50;6)$(MOTIVO_TRASL;10;7)$(MOTIVO_TRASL;11;8)$(MOTIVO_TRASL;11;9)$(MOTIVO_TRASL;5;10)
+______________________________________________________________________________________________________
+Fecha de Emisión: $(FECEMISION;25;dd/mm/yy) $(SPACE;10) Punto de Partida: $(PTOPART;30)
+DESTINATARIO
+Nombre o Razón Social: $(NOMDEST;40) $(SPACE;6) RUC/CI: $(RUCDEST;15)
+Punto de Llegada: $(PTOLLEG;75)
+IDENTIFICACION DE LA PERSONA ENCARGADA DEL TRANSPORTE
+Nombre o Razón Social: $(NOMTRANSP;40) $(SPACE;6) RUC/CI: $(RUCTRANSP;15)
+______________________________________________________________________________________________________
+BIENES TRANSPORTADOS
+Cantidad $(SPACE;11) Unidad $(SPACE;15) DESCRIPCION
+______________________________________________________________________________________________________
+$(SPACE;0) %(LIN;4)
+[/SECTION]
+[SECTION TRANSFITEM;LINEA=20;CAMBIOPAG=T]   
+$(CANT;10;0)           $(UNIDAD;15) $(DESCITEM;45)
+[/SECTION]%(CD0)
+______________________________________________________________________________________________________

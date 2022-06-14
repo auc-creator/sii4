@@ -1,0 +1,57 @@
+[SECTION CONFIG]    'Formato de impresion para EL ARTESANO - PUNTO DE VENTA 29/09/04 jeaa
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+[/SECTION]
+[SECTION HEADER]
+%(CMD;27-64)%(LIN;2.5)
+$(SPACE;1)%(CMD;27-33-24)$(NOMEMP;25)%(CMD;27-33-9)
+$(SPACE;5)RUC:$(RUCEMP;15)
+$(SPACE;5)JADAN PACHECO EDUARDO
+$(SPACE;5)$(DR1EMP;25)
+$(SPACE;5)Teléfono: $(TL1EMP;7)
+
+$(SPACE;1)%(CMD;27-33-32)$(NOMGNTRANS;15)%(LIN;1)
+$(SPACE;0)%(CMD;27-33-9)No. 001-002-$(NUMTRANSERIE;7)%(LIN;2.5)
+$(SPACE;2)AUTORIZACION SRI: 923008837
+$(SPACE;2)VALIDA HASTA: SEPTIEMBRE/2005
+%(CMD;27-33-1)Fecha: $(FECHATRANS;12;dd-mmm-yyyy) 
+RUC   : $(RUCCLI;13) 
+Cliente: $(NOMCLI;20) 
+Dirección: $(DIRCLI;20)
+[/SECTION]
+$(SPACE;0)
+%(SB1)%(CMD;27-33-9)DESCRIPCION
+CODIGO    CANT % DSCTO. P.UNI P.TOT%(SB0)%(CMD;27-33-1)
+[SECTION ITEM;LINEA=0;CAMBIOPAG=F]
+$(DESCITEMIVA;33) 
+ $(CODITEM;10) $(CANT;5;2)  $(PORDESC; 2; 0)%  $(PU;4;4) $(PT;6;2)
+[/SECTION]
+$(SPACE;1)
+%(SB1)%(CMD;27-33-9)SUBTOTAL   DESCUENT  IVA12%  TOTAL$%(SB0)
+$(SPACE;1)$(PTOTAL1;6;2) $(SPACE;2)$(RECAR;6; 2;DESCXTODO) $(SPACE;2)$(RECAR;6;2;IVA) %(CMD;27-33-1)
+$(SPACE;18)%(CMD;27-33-40)$$(PTOTAL2;6;2)%(CMD;27-33-1)
+Items Vendidos: $(CANTTTL; 4; 0)
+BLANCO:ADQUIRENTE / COLOR: EMISOR
+
+  *** GRACIAS POR PREFERIRNOS ***
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-105)
+
+'comandos para punto de venta
+'%(CMD;27-64) 	reseteado de impresora
+'%(CMD;27-33-24)	doble altura y negrita
+' %(CMD;27-33-9)	letra condensada y negrita
+'%(CMD;27-33-32)	letra doble ancho
+'%(CMD;27-33-24)	letra doble ancho
+'%(CMD;27-33-1)	letra condensada
+'%(CMD;27-33-40)	letra doble ancho y negrita
+'%(CMD;27-10)	avance de linea
+'%(CMD;27-105)	corte total de papel

@@ -1,0 +1,35 @@
+[SECTION CONFIG]    'Formato de impresion para ALVISA
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 34     'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+%(LIN;5)    '5  milimetros  cada linea (considerar  5mm de traccion de papel)
+
+
+
+
+
+[SECTION HEADER]
+                                                   Num:$(NUMTRANS;8)%(CD1)
+ 
+            %(LIN;6)$(CODCLI;3) $(NOMCLI;40)                         $(RUCCLI;15)
+            $(DIRCLI;40)                               $(CIUCLI;15)      $(TELCLI;10)  
+            $(FECHATRANS;30;dd  mmmm  yyyy)                                                $(NOMDOCXCOBPRI;20)
+
+[/SECTION]
+
+
+[SECTION ITEM;LINEA=13;CAMBIOPAG=T]   ' Siempre  ocupa 8 lineas
+      $(CANT;8)  $(DESCITEM;68) $(PU;16) $(PT;16)
+[/SECTION]
+                                                                                                      $(PTOTAL1;16;2) %(LIN;5)'Subtotal
+                                                                                                      $(RECAR;16;2;DESC) 'Descuento
+                                                                                                      $(VNETO;16;2;DESC)	'Valor Neto
+               $(PTOTAL2;30;2;L)                                                         $(RECAR;16;2;IVA)   'IVA                   
+                                                                                                                  0.00 
+
+                                                                                                      $(PTOTAL2;16)'Total factura
+
+
+

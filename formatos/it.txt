@@ -1,0 +1,46 @@
+[SECTION CONFIG]    'Formato de impresion de cobros .
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+LONGITUDCORTE=33
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:TODOS]
+[/SECTION]
+[SECTION HEADER]
+%(LCA)%(CD1)%(LIN;7)%(EX1)$(NOMEMP;55)%(EX0)
+%(LIN;3.5)%(EF1)INGRESO DE TESORERIA $(CODTRANS;3) $(NUMTRANS;5)
+$(SPACE;2)FECHA          : %(EF1)$(FECHATRANS;10;dd/mm/yyyy) $(HORATRANS;5;HH:MM)%(EF0)                 Digitado por: $(CODUSUARIO;20)%(EF1)
+$(SPACE;2)CLIENTE        : %(EF1)$(NOMCLI;35)$(SPACE;4)RUC : %(EF1)$(RUCCLI;13)
+$(SPACE;2)DIRECCION      : %(EF1)$(DIRCLI;35)$(SPACE;4)TELF: %(EF1)$(TELCLI;12)
+$(SPACE;2)POR; CONCEPTO DE: %(EF1)$(DESCTRANS;50)%(LIN;3)
+TOTAL SALDO POR PAGAR    :$(PCSALDOTOTAL;12;2)%(EF0)%(CD1)
+--------------------------------------------------------------------------------------------------------------------
+DOCUMENTO                          VALOR TOTAL        SALDO ANTERIOR               VALOR PAGO                SALDO ACTUAL
+--------------------------------------------------------------------------------------------------------------------
+[/SECTION]
+[SECTION DOCCOBRO;LINEA=0;CAMBIOPAG=F]   
+$(TRANS;5) $(NUMDOC;5 )                      $(VALORDOC;7;2)                     $(SALDOANT;7;2)       $(VALORCAN;10;2)                         $(SALDO;10;2)
+[/SECTION]
+[SECTION DOCPAGO;LINEA=0;CAMBIOPAG=F]   
+$(TRANS;5) $(NUMDOC;5 )                      $(VALORDOC;7;2)     $(SALDOANT;7;2)       $(VALORCAN;10;2)                         $(SALDO;10;2)
+[/SECTION]
+--------------------------------------------------------------------------------------------------------------------
+
+[SECTION DOCXPAGAR; LINEA=0; CAMBIOPAG=F]
+$(COD; 5)  $(DESC; 20)  $(NUMDOC; 6)  $(VALOR; 10; 2)	
+[/SECTION]
+--------------------------------------------------------------------------------------------------------------------
+[SECTION BANCO;LINEA=0;CAMBIOPAG=F]   
+$(NOMTIPODOC;25) # $(NUMDOC;5)                                $(VALOR;7;2)     $(OBSERVA;20;0)
+[/SECTION]
+Retencion:                                                  $(TOTRET;12;2)
+--------------------------------------------------------------------------------------------------------------------
+Total Cancelacion:                                          $(DOCCOBROTTLR;12;2)
+
+
+
+
+                    ---------------                                       ---------------    
+                    RECIBI CONFORME                                          REVISADO 
+%(SPG)

@@ -1,0 +1,32 @@
+[SECTION CONFIG]    'Formato de impresion Generico
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+[/SECTION]                                     
+[SECTION HEADER]
+%(LIN;4) $(SPACE;30)%(CD0) %(EF1) DISTABLASA%(EF0)   
+$(SPACE;30)%(EF1) COMPRA No. $(CODTRANS;2) $(NUMTRANS;5)%(EF0)%(CD1)
+$(SPACE;5)Descripcion: $(DESCTRANS; 30)  Fecha: $(FECHATRANS;15;dd-mmmm-yyyy) 
+$(SPACE;5)Nombre: $(NOMPROV;30) $(SPACE;5) Ruc/CI: $(RUCPROV;15)
+$(SPACE;5)Dirección: $(DIRPROV;30) $(SPACE;3)Teléfono: $(TELPROV;15) #Doc: $(NUMDOCREF;10) %(LIN;4)
+[/SECTION]
+
+    %(SB1)     CODIGO                        DESCRIPCION                                     CANTIDAD        COSTO U          TOTAL%(SB0)
+[SECTION ITEM;LINEA=0;CAMBIOPAG=F]   
+$(NUMLIN;4)    $(CODITEM;16)       $(DESCITEMIVA;55)   $(CANT;4;0)    $(CU;12;2)     $(CT;12;2)
+[/SECTION]
+   %(SB1)                                                                                                                            %(SB0)
+               TOTAL:$(SPACE;67)$(CANTTTL;8;2)$(SPACE;18)$(CTOTAL1;12;2)
+
+                                                                    %(SB1)RECAGOS DESCUENTOS                                       %(SB0)
+[SECTION RECARGO; LINEA=0;CAMBIOPAG=F]
+                                                                      $(DESC;38) $(SIGNO;1) $(PORCENT; 4;2)%  $(VALOR;8;2)
+[/SECTION]
+   %(SB1)                                                                                                                            %(SB0)
+$(SPACE;90) %(EF1) TOTAL : $(CTOTAL2;12;2) %(EF0)
+
+											         Digitado por: $(CODUSUARIO;10)
+$(SPACE;20)______________$(SPACE;12)_______________
+                    Visto Bueno               Recibi Conforme
+%(SPG)		      

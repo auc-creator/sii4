@@ -1,0 +1,27 @@
+[SECTION CONFIG]    'INGRESO DE TESORERIA PAGO GENERICO
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+HEADERTODO=F
+[/SECTION]
+[SECTION HEADER;TODO=T]
+%(EX1)%(EF1)$(NOMEMP;30)xx %(EF0)%(EX0)%(LIN;3.5)
+%(EF1)RECIBO DE DESCUENTO CONSUMO COMISARIATO $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)
+%(CD1)FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+%(CD0)%(EF1)DOCUMENTOS COBRADOS%(EF0)%(CD1)
+------------------------------------------------------------------------------------------------------------------------------
+#  NOMBRE                                    TRANS            DOC      TOTAL DOCUMENTO    VALOR CANCELADO        saldo total
+------------------------------------------------------------------------------------------------------------------------------
+[/SECTION]
+[SECTION DOCCOBRO; LINEA=0; CAMBIOPAG=F]
+$(NUMLIN;3) $(NOMPC;40) $(TRANS;10) $(NUMDOC;10) $(VALORDOC;8;2)        $(VALORCAN;8;2)        $(SALDOTOTALTRANS;8;2)
+[/SECTION]
+------------------------------------------------------------------------------------------------------------------------------
+   %(EX1)TOTAL:%(EX0)                                                                    $(DOCCOBROTTL;15;2)
+
+
+
+											         Digitado por: $(CODUSUARIO;10)
+     ________________________	          ______________________	             
+             Revisado                          Recibi Conforme
+%(SPG)		      

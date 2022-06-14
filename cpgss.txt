@@ -1,0 +1,28 @@
+[SECTION CONFIG]    'INGRESO DE TESORERIA PAGO GENERICO
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+[/SECTION]
+[SECTION HEADER;TODO=T]
+%(EX1)%(EF1)$(NOMEMP;30)%(EF0)%(EX0)%(LIN;3.5)
+%(EF1)INGRESO DE TESORERIA $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)
+%(CD1)FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+POR CONCEPTO DE: $(DESCTRANS;180)
+[/SECTION]
+%(CD0)%(EF1)DOCUMENTOS COBRADOS%(EF0)%(CD1)
+
+%(CD0)%(EF1)ASIENTO%(EF0)%(CD1)
+------------------------------------------------------------------------------------------------------------------------------
+#  COD.CUENTA      CUENTA                    DESCRIPCION                                  DEBE              HABER
+------------------------------------------------------------------------------------------------------------------------------
+[SECTION ASIENTO]
+$(NUMLIN;2) $(CODCTA;15) $(NOMCTA;25) $(DESC;30) $(DEBE;8;2) $(HABER;8;2) $(CODSUCURSAL;8) $(SUCURSAL;15)
+[/SECTION]
+------------------------------------------------------------------------------------------------------------------------------
+   %(EX1)TOTAL:%(EX0)                                                             $(ASIDTTL;18;2) $(ASIHTTL;18;2)
+
+
+											         Digitado por: $(CODUSUARIO;10)
+     ________________________	          ______________________	             
+             Revisado                          Recibi Conforme
+%(SPG)		      

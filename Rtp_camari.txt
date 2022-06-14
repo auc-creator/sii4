@@ -1,0 +1,39 @@
+[SECTION CONFIG]    'Formato de impresion para CAMARI
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:TODOS]
+[/SECTION]
+[SECTION HEADER]
+$(SPACE;0)%(LIN;10)%(CD1)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;40)$(CODTRANS;5)$(NUMTRANS;7)%(LIN;4.5)
+$(SPACE;0)
+$(SPACE;30)$(NOMPROV;50)
+$(SPACE;35)$(RUCPROV;15)
+$(SPACE;20)$(DIRPROV;80)
+$(SPACE;20)$(DESCTRANS;80) %(LIN;4)
+[/SECTION]
+[SECTION RETENCION;LINEA=1;CAMBIOPAG=F;PARAMETROS=TODOS]
+       $(OBSERVA;30)                      $(NUMDOC;15)
+                          $(EJEFISCAL;4;yyyy)
+[/SECTION]
+$(SPACE;20)%(LIN;4.6)
+[SECTION RETENCION;LINEA=1;CAMBIOPAG=F;PARAMETROS=IR]
+                                         $(BASE;12;2)
+$(PORCENT;2)%                                      $(HABER;12;2)
+                                         $(SUBTOTALIR;12;2)
+[/SECTION]
+[SECTION RETENCION;LINEA=1;CAMBIOPAG=F;PARAMETROS=IV]
+                                         $(BASE;12;2)
+	vgchb	                              $(TIR+BIVA;12;2)
+                 $(PORCENT;2)%                     $(HABER;12;2)
+[/SECTION]
+$(SPACE;45)$(TOTBASE-RET;8;2)
+$(SPACE;0)
+$(SPACE;0)%(LIN;2)
+$(SPACE;20)Quito, $(FECHATRANS;19;dd-mmmm-yyyy)
+%(SPG)

@@ -1,0 +1,22 @@
+[SECTION CONFIG]    'Formato de impresion para SODILIBRO 04-06-2004 vergel
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION HEADER]
+%(EF0) %(EX0) %(CD1) 
+%(LIN;7) $(SPACE;00) 
+$(SPACE;80) 
+$(SPACE;10) %(LIN;4)
+$(SPACE;5) Fecha:$(FECHATRANS;18;dd-mmmm-yyyy) $(SPACE;5) Hora:
+$(SPACE;10)Vendedor: $(CODVENDE;10) -  $(NOMVENDE;20)  
+$(SPACE;10)$(HORATRANS;5;HH:MM)  $(SPACE;10)$(CODTRANS;4) $(NUMTRANS;4) 
+$(SPACE;0) %(LIN;4.7)
+$(SPACE;5) DENOMINACION $(SPACE;5) CANT. $(SPACE;3) VALOR
+[/SECTION]
+[SECTION ITEM;LINEA=0;CAMBIOPAG=F]   
+ $(DESCITEM;20)  $(CANT;4;2)    $(PT;8;2)     
+[/SECTION]
+$(SPACE;2) TOTAL DEPOSITO: %(CD0)%(EX1)$(PTOTAL2;8;2) %(EX0) %(CD1) 
+%(SPG)

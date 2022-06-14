@@ -1,0 +1,25 @@
+[SECTION CONFIG]    'Formato de impresion auc
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 70      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+[/SECTION]                                     
+[SECTION HEADER]
+%(CD1)%(LIN;12)$(SPACE;10)
+%(LIN;5) $(SPACE;40)$(CODTRANS;4) $(NUMTRANS;4)%(LIN;3)
+$(SPACE;0)%(LIN;5)
+$(SPACE;0)
+$(SPACE;10)VEN:$(CODVENDE;10)
+$(SPACE;10)$(NOMCLI;50)%(LIN;5)
+$(SPACE;10)$(DIRCLI;27)$(SPACE;8) $(RUCCLI;15)
+$(SPACE;10)$(FECHATRANS;15;dd-mmm-yyyy)$(SPACE;10)$(TELCLI;10)%(LIN;6)
+$(SPACE;0)%(LIN;5)
+[/SECTION]
+[SECTION ITEM;LINEA=10;CAMBIOPAG=F]
+  $(CANT;5;0) $(DESCITEMIVA;30)  $(PU;8;2)  $(PT;8;2)
+[/SECTION]
+$(SPACE;45)$(PTOTAL1;12;2)
+$(SPACE;45)$(TOTALSINIVA;12;2)
+$(SPACE;40)12   $(RECAR;12;2;IVA)
+$(SPACE;45)$(PTOTAL2;12;2)%(EF0)
+%(SPG)

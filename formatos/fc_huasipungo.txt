@@ -1,0 +1,28 @@
+[SECTION CONFIG]    'Formato de impresion para HUASIPUNGO
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 38     'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+%(CD1)%(EF0)%(EX0) %(LIN;7)
+$(SPACE;0)%(LIN;3.5)INICIO
+$(SPACE;22)$(NOMCLI;45) $(SPACE;5) $(DIRCLI;40)
+$(SPACE;23)$(RUCCLI;15) Tef:$(TELCLI;12) $(SPACE;13)$(FECHATRANS;20;dd-mmm-yyyy)$(SPACE;3)Dig: $(CODUSUARIO;12)
+[/SECTION]
+$(SPACE;0) %(LIN;5)
+$(SPACE;0)
+$(SPACE;0)%(LIN;3.3)
+$(SPACE;0)
+[SECTION ITEM;LINEA=20;CAMBIOPAG=F]
+$(CODITEM;17) $(DESCITEMIVA;40)  $(UNIDAD;4)  $(CANT;12;0)   $(PU;12;2)   $(PT;12;2)
+[/SECTION]
+$(SPACE;0)%(LIN;1)
+$(SPACE;0)
+[SECTION DOCXCOBRAR;LINEA=1;CAMBIOPAG=F]   'OCUPA SOLAMENTE UNA LINEA
+       %(EF1)F. COBRO: $(DESC;20) VENCE: $(FVENCI;20;dd-mmmm-yyyy)%(EF0)
+[/SECTION] %(LIN;6.5)
+$(SPACE;0)%(LIN;9)
+   $(TOTALSINIVA;12;2)           $(TOTALCONIVA;12;2)                $(RECAR;10;2;DESC)             $(RECAR;10;2;IVA)         $(PTOTAL2;12;2)%(LIN;3)
+$(SPACE;5)$(PTOTAL2;70;2;L)%(LIN;5)
+$(SPACE;0)

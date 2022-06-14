@@ -1,0 +1,35 @@
+[SECTION CONFIG]    'INGRESO DE TESORERIA COBRO
+MODO = T
+NUMLINEA = 34
+IGNORARCONTROL = F
+[/SECTION]
+
+
+[SECTION HEADER;TODO=T]
+$(NOMEMP;30)
+                          %(EF1)$(DESCTRANS;10) $(CODTRANS;3) #$(NUMTRANS;8)%(EF0)                  
+                                              	%(CD1)Fecha: $(FECHATRANS;10;dd-mm-yyyy)
+POR CONCEPTO DE: $(DESCTRANS;70)  
+TOTAL: %(EF1) $(BCODTTL;18) %(EF0)                         COTIZACION: $(COTIZACION;18)
+[/SECTION]
+
+%(SB1)BANCO                              DOC            NOMBRE         F.VENCI                 VALOR OBREVACION          %(SB0)
+[SECTION BANCO]   
+$(NOMBANCO;34) $(NUMDOC;14) $(NOMBRE;14) $(FVENCI;11;dd/mm/yy) $(VALOR;18;2) $(OBSERVA;20)
+[/SECTION]
+
+
+%(SB1)COD.CUENTA          CUENTA                        DESCRIPCION                   DEBE               HABER             %(SB0)
+[SECTION ASIENTO]
+$(CODCTA;19) $(NOMCTA;29) $(DESC;29) $(DEBE;18;2) $(HABER;18;2)
+[/SECTION]
+%(SB1)                                                                                                                    %(SB0)
+                                                        TOTAL:                  $(ASIDTTL;18;2) $(ASIHTTL;18;2)
+
+
+
+
+
+              _____________                         ________________           DIGITADO POR: $(CODUSUARIO;10)
+                Visto Bueno                              Recibido
+

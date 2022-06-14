@@ -1,0 +1,43 @@
+[SECTION CONFIG]    'Formato de impresion para Papeleria LC punto de Venta
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION HEADER]
+%(CD1) %(LIN;4)    Andrade Rivera Laura Rosa
+$(SPACE;11)Papeleria L.C.
+$(SPACE;8)R.U.C 0100147453001
+Mariano Cueva 16-40 y Munoz Vernaza
+$(SPACE;10)TELF: 835012
+$(SPACE;8)Cuenca, $(FECHATRANS;15;dd-mmm-yyyy)
+$(SPACE;0)
+$(SPACE;5)NOTA DE VENTA 001-001-000001'$(NUMTRANS;7)
+$(SPACE;0)
+CLIENTE: $(NOMCLI;25)
+RUC:     $(RUCCLI;15)
+$(SPACE;0)
+[/SECTION]
+Descripcion$(SPACE;11)  Cant   Total
+[SECTION ITEM;LINEA=0;CAMBIOPAG=F]   
+$(DESCITEMIVA;20)  $(CANT;5;0)  $(PTR;7;2)
+[/SECTION]
+
+SUBTOTAL IVA 0 $(SPACE;14)$(TOTALSINIVA;7;2)
+SUBTOTAL IVA   $(SPACE;14)$(TOTALCONIVA;7;2)
+IVA            $(SPACE;13) $(RECAR;7;2;IVA)
+TOTAL USD$(SPACE;11)  $(CANTTTL;5;0)  $(PTOTAL2;7;2)
+
+EPSON model: M119D s/n: CQXK013704
+Aut. SRI: En tramite    Cad.: 
+
+$(SPACE;7)***GRACIAS POR SU COMPRA***
+$(SPACE;14)ADQUIRIENTE
+
+
+
+
+
+
+
+ '%(SPG)

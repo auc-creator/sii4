@@ -1,0 +1,28 @@
+[SECTION CONFIG]    'Formato de impresion Generico
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 20      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+LONGITUDCORTE=20
+[/SECTION]                                     
+[SECTION HEADER;TODO=T] 
+%(LCA)%(CMD;27-64)%(CD1)$(SPACE;0) $(SPACE;45)$(CODTRANS;5)$(SPACE;5) $(NUMTRANSERIE;7) %(LIN;3.5)
+$(SPACE;80)$(NOMCLI;50)
+$(SPACE;10)$(DIRCLI;30)$(SPACE;10) $(TELCLI;10) $(SPACE;20) $(RUCCLI; 15)$(SPACE;20)$(FECHATRANS;15;dd/mmm/yyyy)
+$(SPACE;0)
+$(SPACE;0)%(LIN;3)
+$(SPACE;0)
+[/SECTION]
+[SECTION ITEM;LINEA=13;CAMBIOPAG=F]   
+ $(CODITEM;10) $(DESCITEMIVA;30) $(PORDESC; 4; 2)              $(CANT;6;3)          $(PU;10;2)                       $(PT+IVA;10;2)
+[/SECTION]
+$(SPACE;0)
+$(SPACE;0)
+$(VNETOSINIVA;10;2) $(SPACE;5) $(VNETOCONIVA;10;2) $(SPACE;5) $(RECAR;10;2;DESC) $(SPACE;5) $(RECAR;10;2;IVA) $(SPACE;10) $(VNETO;10;2) $(SPACE;10) $(RECAR;10;2;IVA) $(SPACE;5) $(PTOTAL2;10;2)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)

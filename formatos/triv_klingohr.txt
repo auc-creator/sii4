@@ -1,0 +1,39 @@
+ 'IMPRESION DE GUIA DE REMISION PARA KLINGOHR
+
+[SECTION CONFIG]   
+MODO = T   ' Indica  si es modo texto  o gráfico
+NUMLINEA = 34     'Numero de líneas  totales
+IGNORACONTROL = F
+[/SECTION]
+[SECTION PARAMETROS;MOTIVTRASL:1,x;MOTIVTRASL:2,x;MOTIVTRASL:3,x;MOTIVTRASL:4,x;MOTIVTRASL:5,x;MOTIVTRASL:6,x;MOTIVTRASL:7,x;MOTIVTRASL:8,x;MOTIVTRASL:9,x;MOTIVTRASL:10,x]
+[/SECTION]
+%(LIN;3) $(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+%(LIN;5.2) $(SPACE;0) %(EF0) %(CD1)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(CARGARMOTIVTRASL;Venta,Compra,Transformación,Consignación,Traslado entre establecimientos de una misma empresa,Traslado por emisor itinerante de comprobantes de venta,Devolución,Importación,Exportación,Otros)
+$(SPACE;43)  $(FECINITRASL;25;dd/mm/yy) $(SPACE;30)   $(FECEMISION;25;dd/mm/yy)
+$(SPACE;43)  $(FECFINTRASL;25;dd/mm/yy) $(SPACE;35) $(COMPVTA;10)
+$(SPACE;0) %(LIN;8) 
+                               $(MOTIVTRASL;5;1)                                                    $(MOTIVTRASL;5;5)                           $(MOTIVTRASL;5;7)%(LIN;5) 
+                               $(MOTIVTRASL;5;2)                                                                                    $(MOTIVTRASL;5;8)
+                               $(MOTIVTRASL;5;3)                                                    $(MOTIVTRASL;5;6)                           $(MOTIVTRASL;5;9)
+                               $(MOTIVTRASL;5;4)                                                                                    $(MOTIVTRASL;5;10) %(LIN;4)
+$(SPACE;0)
+$(SPACE;25)  $(FECEMISION;25;dd/mm/yy) $(SPACE;18)  $(PTOPART;25;dd/mm/yy) %(LIN;5) $(SPACE;0)
+$(SPACE;0) %(LIN;7)
+$(SPACE;35)  $(NOMDEST;30)  %(LIN;5)
+$(SPACE;85) $(RUCDEST;15)
+$(SPACE;27)  $(PTOLLEG;45) 
+$(SPACE;0) %(LIN;8) 
+$(SPACE;35)  $(NOMTRANSP;45) %(LIN;5) 
+$(SPACE;15)  $(RUCTRANSP;25)
+%(LIN;6.9) $(SPACE;0)
+$(SPACE;0)
+$(SPACE;0) %(LIN;5)
+[SECTION ITEM;LINEA=19;CAMBIOPAG=F]   
+           $(CODITEM;10;0)  $(CANT;10;0)       $(DESCITEMIVA;40)
+[/SECTION]%(CD0)  

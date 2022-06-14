@@ -1,0 +1,21 @@
+[SECTION CONFIG]    'Formato de impresion Generico
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+[/SECTION]                                     
+[SECTION HEADER] 
+$(SPACE;60)
+$(SPACE;60)
+$(SPACE;60)
+$(SPACE;60)
+$(SPACE;60)
+$(SPACE;10)%(CD1)$(CODTRANS; 8)%(CD1)$(SPACE;51)%(CD1) $(DR1EMP; 30) 
+$(SPACE;10)%(CD1)$(NOMCLI;30)%(CD1) $(SPACE;37)%(CD1) $(TL1EMP;10)  %(CD1)
+$(SPACE;10)%(CD1) $(RUCEMP; 15)%(CD1) $(SPACE;51)%(CD1) Cuenca 
+[/SECTION]
+[SECTION ELE;LINEA=0;CAMBIOPAG=F]
+	$(INGRESOS;10)     $(EGRESOS;10) 
+[/SECTION]
+
+%(SPG)

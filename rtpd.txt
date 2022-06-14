@@ -1,0 +1,28 @@
+[SECTION CONFIG]    'Formato de impresion para EL ARTESANO
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:TODOS]
+[/SECTION]
+[SECTION HEADER]
+%(CD1)%(EF0)%(EX0)%(LIN;6.7)'SUBE O BAJA TODA LA IMPRESION 
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)%(LIN;4.5) 'MANEJA EL ESPACIO INTERLINEAL 
+$(SPACE;10)$(NOMPROV;50)$(SPACE;5)$(FECHATRANS;15;dd-mmm-yyyy)
+$(SPACE;10)$(RUCPROV;15)$(SPACE;23)$(FAXPROV;8)$(SPACE;23) 2008
+$(SPACE;10)$(DIRPROV;60)$(SPACE;12)FACTURA %(LIN;0.1) 
+[/SECTION]
+[SECTION RETENCION;LINEA=1;CAMBIOPAG=F;PARAMETROS=TODOS]
+                                                                                                                                                                                                                                        $(OBSERVA;15)%(LIN;5)
+[/SECTION]
+$(SPACE;0)%(LIN;1)
+$(SPACE;0)%(LIN;5.5)' SUBE O BAJA IMPRESION
+[SECTION RETENCION;LINEA=2;CAMBIOPAG=F;PARAMETROS=TODOS]
+$(NUMDOCREFSRI;15)   $(NUMDOC;14;2)      $(BASE;7;2)         $(DESC;22) $(CODSRI;4)  $(PORCENT;4 )             $(HABER;7;2)   
+[/SECTION]
+$(SPACE;0)%(LIN;18.5)
+$(SPACE;80)  $(TOTRET;7;2)
+%(LIN;2.5) $(SPACE;70) %(CD0)

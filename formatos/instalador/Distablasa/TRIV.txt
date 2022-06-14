@@ -1,0 +1,32 @@
+ 'IMPRESION DE GUIA DE REMISION
+[SECTION CONFIG]    'Formato de impresión de compra
+MODO = T   ' Indica  si es modo texto  o gráfico
+NUMLINEA =80    'Numero de líneas  totales
+IGNORACONTROL = F
+[/SECTION]
+[SECTION PARAMETROS;MOTIVTRASL:1,x;MOTIVTRASL:2,x;MOTIVTRASL:3,x;MOTIVTRASL:4,x]
+MOTIVTRASL(X,X,X,X)
+TOTRETP(IV)
+[/SECTION]
+%(LIN;11) $(SPACE;0) %(CD0)
+$(CARGARMOTIVTRASL;Compra,Venta,Devolución,Otros)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;15)  $(FECINITRASL;14;dd/mmmm/yyyy) $(SPACE;20)  $(COMPVTA;10)
+%(LIN;8)$(SPACE;15)  $(FECFINTRASL,14;dd/mmmm/yyyy) $(SPACE;20)  $(FECEMISION;14;dd/mmmm/yyyy) 
+%(LIN;7)$(SPACE;15)
+%(LIN;3.5) $(MOTIVO_TRASL;5;1)               $(MOTIVO_TRASL;5;2)               $(MOTIVO_TRASL;5;3)              $(MOTIVTRASL;5;4)
+%(LIN;5)$(SPACE;20)  
+%(LIN;10)$(SPACE;20)  $(FECEMISION;14;dd/mmmm/yyyy) $(SPACE;15)  %(CD1)$(PTOPART;25)
+%(LIN;8)$(SPACE;20)  
+%(LIN;10) $(SPACE;20)$(NOMDEST;30) $(SPACE;10)   $(RUCDEST;15)$(SPACE;5)  $(PTOLLEG;35)
+%(LIN;3) $(SPACE;20)
+$(SPACE;0)$(SPACE;22)  $(NOMTRANSP;30) $(SPACE;10) $(RUCTRANSP;15)
+%(LIN;6) $(SPACE;0)
+$(SPACE;0)
+%(LIN;3.5)$(SPACE;0)
+[SECTION ITEM;LINEA=10;CAMBIOPAG=T]   ' Siempre  ocupa 15 lineas
+    $(CANT;8;0)             $(UNIDAD;5)     $(CODITEM;10)     $(DESCITEM;30) 
+[/SECTION]
+%(spg)

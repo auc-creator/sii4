@@ -1,0 +1,27 @@
+'E  ste es el formato para el Documento de Factura para Ishida y Asociados  tamaño papel158x220
+<FORMATO Nombre=" Factura ISHIDA Y  MAT auc";TamañoPapel=A4;TipoLetra="Arial";
+	TamañoLetra=9;MargenSup=6;MargenInf=5;MargenDer=10;MargenIzq=15> 
+
+	<CAMPO CodCampo=NOMCLI;posX=33;posY=42;Ancho=77;LetraNegrita=SI/>
+	<CAMPO CodCampo=RUCCLI;posX=123;posY=42;Ancho=30;LetraNegrita=SI/>
+
+	<CAMPO CodCampo=DIRCLI;posX=37;posY=48;Ancho=70;Alto=5;LetraNegrita=SI/>
+	<CAMPO CodCampo=TELCLI;posX=120;posY=48;Ancho=20;LetraNegrita=SI/>
+
+	<CAMPO codCampo=FECHATRANS;formatstring="dd/mmm/yyyy";posX=49;posY=54;Ancho=50;Alto=5;LetraNegrita=SI/>
+
+         <SECCION Codigo=ITEM;PosX=23;posY=68;Ancho=130;alto=23;altofila=SIMPLE;tipoLetra="Arial";tamañoLetra=8>
+		<COLUMNA Titulo="Descripcion";CodCampo=DESCITEM;Ancho=75/>
+		<COLUMNA Titulo="Cant";CodCampo=CANT;Ancho=15;Alineacion=CENTRO/>
+                <COLUMNA Titulo="P.U.";CodCampo=PU;Ancho=20;Alineacion=DERECHA;FormatString="##0.00"/>
+                <COLUMNA Titulo="P.T.";CodCampo=PT;Ancho=20;Alineacion=DERECHA;FormatString="##0.00"/>
+        </SECCION>
+
+	<CAMPO CodCampo=PTOTAL1;FormatString="#0.00";posx=115;posY=165;ancho=25;Alineacion=DERECHA/>  
+	<CAMPO CodCampo=VALRECAR;Parametros=DESC;FormatString="#0.00";posX=115;posY=170;Ancho=25;Alineacion=DERECHA/>
+	<CAMPO CodCampo=PTOTAL1;FormatString="#0.00";posx=115;posY=175;ancho=25;Alineacion=DERECHA/>
+	<CAMPO CodCampo="12";posX=110;posY=180;Ancho=5;Alto=5;Alineacion=DERECHA/>
+	<CAMPO CodCampo=VALRECAR;Parametros=IVA;FormatString="##0.00";posX=115;posY=180;Ancho=25;Alto=5;Alineacion=DERECHA/>
+	<CAMPO CodCampo="0.00";posX=115;posY=185;Ancho=25;Alto=5;Alineacion=DERECHA/>
+	<CAMPO CodCampo=PTOTAL2;FormatString="#0.00";posX=115;posY=188;Ancho=25;Alto=15;TamañoLetra=13;LetraNegrita=SI;Alineacion=DERECHA/>
+</FORMATO>

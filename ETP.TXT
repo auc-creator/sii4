@@ -1,0 +1,34 @@
+[SECTION CONFIG]    'EGRESO DE TESORERIA PAGO
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+[/SECTION]
+[SECTION HEADER;TODO=T]
+   %(EF1)$(NOMEMP;30) %(EF0)%(LIN;3.5)
+   %(EF1)EGRESO DE BANCOS $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)
+ $(SPACE;50)   %(CD1) FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+  Por concepto de: $(DESCTRANS;180) %(CD0)
+[/SECTION]
+$(NOMPROV;50)
+%(CD1) %(LIN;4.5)
+%(EF1)  TOTAL: $(BCOTTL;15;2)  %(EF0) 
+______________________________________________________________________________________________________________________________
+      BANCO		DOC	                     Nombre            F.VENCIM.	VALOR	  OBSERVACION              
+------------------------------------------------------------------------------------------------------------------------------
+[SECTION BANCO;NUMLINEA=20;CAMBIOPAG=T]
+$(NOMBANCO;25)   $(NOMTIPODOC;15)$(NUMDOC;7) $(NOMBRE;20)  $(FVENCI;10;dd/mm/yy)$(VALOR;18;2)  $(OBSERVA;20)
+[/SECTION]
+______________________________________________________________________________________________________________________________
+  COD.CUENTA	CUENTA		         DESCRIPCION				       DEBE	           HABER      
+------------------------------------------------------------------------------------------------------------------------------
+[SECTION ASIENTO;NUMLINEA=20;CAMBIOPAG=T]
+   $(CODCTA;15)  $(NOMCTA;25) $(DESC;30) $(DEBE;18;2) $(HABER;19;2)
+[/SECTION]
+
+                                                                     TOTAL:  $(ASIDTTL;18;2) $(ASIHTTL;19;2)
+
+$(SPACE;95)Digitado por: $(CODUSUARIO;10)%(LIN;3.5)
+$(SPACE;95)Modifica por: $(CODUSUARIOMOD;10)
+          ______________	               ____________	             
+		  Revisado			Recibi Conforme
+%(SPG)		      

@@ -1,0 +1,29 @@
+[SECTION CONFIG]    'Formato de impresion de transferencia de  bodegas para Avila Ochoa
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 64     'Numero de lineas  totales
+IGNORACONTROL = F
+[/SECTION]
+
+[SECTION HEADER;TODO=T]
+    %(EX1)  $(NOMEMP;24)%(EX0) pagina: $(NUMPAG)
+Tel: $(TL1EMP;10)      Tel2:  $(TL2EMP;10)
+Direccion: $(DR1EMP;30)
+RUC: $(RUCEMP;15)
+$(SPACE;0)
+%(EF1)DESCRIPCION: $(DESCTRANS;30)      ITRF$(NUMTRANS;5)%(EF0)
+Fecha: $(FECHATRANS;14;dd/mm/yyyy) #Doc.Ref.:$(NUMDOCREF;10)       Moneda: $(CODMONEDA;5)
+Bodega Origen: $(CODBODORI;6) $(DESCBODORI;25)
+Bodeba Destino: $(CODBODDEST;6) $(DESCBODDEST;25)
+%(CD1)
+[/SECTION]
+  #   CODIGO           DESCRIPCION                                    CANT          V.UNIT         V.TOTAL  
+---------------------------------------------------------------------------------------------------------------
+[SECTION TRANSFITEM; LINEA=25; CAMBIOPAG=T]
+ $(NUMLIN;3)  $(CODITEM;10)   $(DESCITEM;46) $(CANT;8)        $(CU;7;2)    $(CT;10;2)
+[/SECTION]
+---------------------------------------------------------------------------------------------------------------
+                   TOTAL:		                                 $(CANTTTL;7;2)               $(CTOTAL1;14;2)
+
+              _____________                              ________________
+               Visto Bueno                                    Recibido                DIGITADO POR: $(CODUSUARIO;12)
+%(SPG)

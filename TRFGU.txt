@@ -1,0 +1,25 @@
+[SECTION CONFIG]    'Formato de impresion para Klingohr
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+%(LIN;5) $(SPACE;0)
+ $(SPACE;0)
+%(LIN;5 )  $(SPACE;0) 
+%(LIN;2.5)$(SPACE;0)
+$(SPACE;0) %(EF1)
+$(SPACE;5) $(CODPROV;7) $(SPACE;4) $(NOMPROV;30) $(SPACE;5) CUENCA $(SPACE;5) $(FECHATRANS;17;dd/mm/yy)
+$(SPACE;8) $(RUCPROV;20) $(SPACE;5) $(DIRPROV;60) %(EF0)
+[/SECTION]
+$(SPACE;0) %(LIN;5) %(CD1) 
+[SECTION ITEM;LINEA=11;CAMBIOPAG=F]   
+  $(CODITEM;15)    $(DESCITEMIVA;50)         $(PU;12;2)$(PT;12;2) $(PESONETO;12;2) $(PESONETOTOT;12;2)
+[/SECTION]
+%(LIN;3.2)$(SPACE;115) $(CNETO;12;2;DESC)
+$(SPACE;78)12 $(SPACE;33)  $(TOTALCONIVA;12;2)
+$(SPACE;78)12 $(SPACE;33)  $(TOTALSINIVA;12;2)
+$(SPACE;78)12 $(SPACE;33)  $(RECAR;12;2;IVA)
+$(SPACE;115) $(PTOTAL2;12;2) %(CD0) 
+$(SPACE;115) $(PESOTOTALNETO;12;2;KGQQ) %(CD0) 

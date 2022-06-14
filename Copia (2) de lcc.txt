@@ -1,0 +1,46 @@
+[SECTION CONFIG]    'INGRESO DE TESORERIA PAGO GENERICO
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+HEADERTODO=F
+[/SECTION]
+[SECTION HEADER;TODO=T]
+%(LCA)%(EX1)%(EF1)$(NOMEMP;30)xx %(EF0)%(EX0)
+%(EF1)RESUMEN DE DESCUENTOS COMISARIATO $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)
+%(CD1)FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+%(CD0)%(EF1)DOCUMENTOS COBRADOS%(EF0)%(CD1)
+------------------------------------------------------------------------------------------------------------------------------
+#   CODIGO            NOMBRE                                              DESCTO. TOTAL         
+------------------------------------------------------------------------------------------------------------------------------
+[/SECTION]
+[SECTION DOCCOBROTOTAL; LINEA=0; CAMBIOPAG=F]
+$(NUMLIN;3) $(CODPC;13) $(NOMPC;40)                                          $(PCCOBROTOTAL;8;2)
+[/SECTION]
+------------------------------------------------------------------------------------------------------------------------------
+   %(EX1)TOTAL:%(EX0)                                                                    $(DOCCOBROTTL;15;2)		      
+%(CD0)%(EF1)BANCOS%(EF0)%(CD1)
+------------------------------------------------------------------------------------------------------------------------------
+#  BANCO                     DOC                    Nombre                         F.VENCIM.      VALOR   OBSERVACION
+------------------------------------------------------------------------------------------------------------------------------
+[SECTION BANCO;NUMLINEA=0;CAMBIOPAG=F]
+$(NUMLIN;2) $(NOMBANCO;25) $(NOMTIPODOC;15)$(NUMDOC;7) $(NOMBRE;30) $(FVENCI;10;dd/mm/yy) $(VALOR;10;2) $(OBSERVA;10)
+[/SECTION]
+------------------------------------------------------------------------------------------------------------------------------
+   %(EX1)TOTAL:%(EX0)                                                                               $(BCOTTL;10;2)
+
+
+%(CD0)%(EF1)ASIENTO%(EF0)%(CD1)
+------------------------------------------------------------------------------------------------------------------------------
+#  COD.CUENTA      CUENTA                    DESCRIPCION                                  DEBE              HABER
+------------------------------------------------------------------------------------------------------------------------------
+[SECTION ASIENTO]
+$(NUMLIN;2) $(CODCTA;15) $(NOMCTA;25) $(DESC;30) $(DEBE;18;2) $(HABER;18;2)
+[/SECTION]
+------------------------------------------------------------------------------------------------------------------------------
+   %(EX1)TOTAL:%(EX0)                                                             $(ASIDTTL;18;2) $(ASIHTTL;18;2)
+
+
+											         Digitado por: $(CODUSUARIO;10)
+     ________________________	          ______________________	             
+             Revisado                          Recibi Conforme
+%(SPG)		      

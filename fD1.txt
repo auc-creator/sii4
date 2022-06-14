@@ -1,0 +1,2 @@
+[DOCUMENTO Factura;factura/]
+[DOCUMENTO Guia de Remision;guia/]

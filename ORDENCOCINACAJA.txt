@@ -1,0 +1,38 @@
+[SECTION CONFIG]    'Formato de impresion para MARKET Don Bosco por Item	
+MODO = T            'Indica  si es modo texto  o grafico	
+NUMLINEA = 150      'Numero de lineas  totales	
+IGNORACONTROL = F	
+HEADERTODO = T	
+[/SECTION]                                     	
+[SECTION HEADER]	
+%(CD1) %(LIN;2.3)  	        
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+$(SPACE;1)%(CMD;27-33-32)RETROBURGER%(CMD;27-33-9)
+$(SPACE;1)%(CMD;27-33-32)ORDEN No.$(NUMTRANSDER;2) A%(CMD;27-33-9)
+$(SPACE;1)
+$(SPACE;1)
+$(FECHATRANS;15;dd-mmm-yyyy)$(HORATRANS;15;hh:mm)
+$(SPACE;5)
+CLIENTE: $(NOMCLI;25)
+$(SPACE;5)
+[/SECTION]
+[SECTION ITEM;LINEA=0;CAMBIOPAG=F]   
+$(DESCITEM;20)  $(CANT;5;0)  
+$(OBSERVA;20)
+[/SECTION]
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-10)
+%(CMD;27-105)

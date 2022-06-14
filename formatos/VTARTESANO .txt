@@ -1,0 +1,29 @@
+[SECTION CONFIG]    'Formato de impresion para EL ARTESANO
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 100      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+%(CD1) %(EF0) %(LIN;4)                
+$(SPACE;0) %(LIN;1.4)
+$(SPACE;0) 
+$(SPACE;41)$(CODTRANS;2) $(NUMTRANS;7) %(LIN;4.8)
+$(SPACE;17)$(CODCLI;10)$(SPACE;27)$(DIRCLI;26)
+$(SPACE;17)$(NOMCLI;27)$(SPACE;10)$(TELCLI;15)
+$(SPACE;17)$(RUCCLI;18)$(SPACE;15)$(FECHATRANS;20;dd/mmmm/yyyy)%(LIN;4)
+
+[/SECTION]
+$(SPACE;0)%(LIN;3)
+[SECTION ITEM;LINEA=14;CAMBIOPAG=F]   
+     $(CODITEM;9) $(DESCITEMIVA;36) $(CANT;6;2) $(SPACE;3) $(PU;7;4) $(PT;7;2)   $(PORDESC;2;2)$(PORDESC;1;%)
+[/SECTION]
+%(LIN;1)
+$(SPACE;53)12
+[/SECTION]
+$(SPACE;0)%(LIN;2.2)
+$(SPACE;3)$(PTOTAL1;12;2)$(RECAR;12;2;DESCXTODO)$(SPACE;5) $(RECAR;12;2;IVA)$(SPACE;8) %(EF1)  $(PTOTAL2;12;2) %(EF0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)%(LIN;6.1)
+$(SPACE;0)%(CD1)

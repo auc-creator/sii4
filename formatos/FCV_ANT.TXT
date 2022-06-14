@@ -1,0 +1,22 @@
+[SECTION CONFIG]    'Formato de impresion para VATEX
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION HEADER]
+%(CD1) %(LIN;19)
+$(SPACE;8) $(FECHATRANS;15;dd-mmmm-yyyy)%(LIN;6)
+$(SPACE;8) $(NOMCLI;30) $(SPACE;5)  $(RUCCLI;15)
+$(SPACE;8) $(DIRCLI;30) $(SPACE;5)  $(TELCLI;15) 
+$(SPACE;0) %(LIN;5)
+[/SECTION]
+[SECTION ITEM;LINEA=10;CAMBIOPAG=F]   
+ $(CANT;2;0)    $(DESCITEM;25) $(PU;8;2)     $(PT;8;2)
+[/SECTION]
+$(SPACE;46) $(PTOTAL1;8;2) 
+$(SPACE;36)12 $(SPACE;7) $(RECAR;8;2;IVA)
+%(LIN;3)
+$(SPACE;34)%(EF1) $(PTOTAL2;12;2)%(EF0)
+$(SPACE;0)
+%(SPG)

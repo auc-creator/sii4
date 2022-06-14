@@ -1,0 +1,46 @@
+[SECTION CONFIG]    'Formato de impresion para LOCUTORIOS
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION HEADER]
+%(CD1) %(LIN;3) $(NOMEMP;40) 
+RUC:$(RUCEMP;20) 
+AUTORIZACION SRI: 923006965
+$(DR1EMP;30)
+$(DR2EMP;20) 
+$(NOMGNTRANS;20) 
+No. 112-001-$(NUMTRANSERIE;7) 
+Cliente:$(NOMCLI;20) 
+RUC: $(RUCCLI;15)
+[/SECTION]
+[SECTION ITEM;LINEA=1;CAMBIOPAG=F]   
+CABINA: $(CODBOD;4)  
+[/SECTION]
+FECHA: $(FECHATRANS;8;dd-mmm-yyyy) 
+----------------------------------
+[SECTION ITEM;LINEA=0;CAMBIOPAG=F]   
+Hora    : $(HORAINI;10)   
+Trafico : $(IVGRUPO1;10) 
+Numero  : $(NUMMARCADO;20)  
+Destino : $(DESCITEM;20) 
+Tiempo  : $(CANT;8;2) minutos         
+Importe: $(PT;8;2)
+-----------------------------------
+[/SECTION]
+SUBTOTAL$(SPACE;5):     $(PTOTAL1;8;2)
+IVA 12%$(SPACE;6):     $(RECAR;8;2;IVA)
+ICE TELE$(SPACE;5):     $(RECAR;8;2;ICE)
+TOTAL$(SPACE;8):     $(PTOTAL2;8;2)
+
+EFECTIVO $(EFECTIVO;8,2)
+VUELTO $(VUELTO;8;2)
+EPSON TM-U220 PD MODEL M188D
+VALIDA HASTA 30/11/2004
+GRACIAS POR PREFERIRNOS
+===================================
+
+
+
+%(SPG)

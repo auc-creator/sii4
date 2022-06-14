@@ -1,0 +1,29 @@
+[SECTION CONFIG]    'Formato de impresion de transferencia de  bodegas
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 34     'Numero de lineas  totales
+IGNORACONTROL = F
+[/SECTION]
+
+[SECTION HEADER;TODO=T]
+    %(EX1)$(NOMEMP;28)%(EX0)    pagina: $(NUMPAG)
+Tel: $(TL1EMP;10)      Tel2:  $(TL2EMP;10)
+Direccion: $(DR1EMP;30)
+RUC: $(RUCEMP;15)
+---------------------------------------------------------------------
+
+%(EF1)$(DESCTRANS;30) #$(NUMTRANS;5)%(EF0)
+
+Fecha: $(FECHATRANS;14;dd/mm/yyyy)
+Bodega Origen: $(CODBODORI;6) $(DESCBODORI;25)
+Bodeba Destino: $(CODBODDEST;6) $(DESCBODDEST;25)
+%(CD1)
+[/SECTION]
+
+             Item                                    Cantidad UNI  
+[SECTION ITEM;LINEA=15;CAMBIOPAG=T]   ' Siempre  ocupa 15 lineas
+  $(NUMLIN;3) $(CODITEM;10) $(DESCITEM;30) $(CANTSGN;8) $(UNIDAD;3) 
+[/SECTION]
+                               
+
+              _____________                              ________________
+               Responsable                                    Bodega    

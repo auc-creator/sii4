@@ -1,0 +1,22 @@
+[SECTION CONFIG]    'recibo PAGO GENERICO
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+HEADERTODO=T
+LONGITUDCORTE=33
+[/SECTION]
+[SECTION HEADER;TODO=T]
+%(LCA)%(EX1)%(EF1)$(NOMEMP;30)xx %(EF0)%(EX0)
+%(EF1)RECIBO DE DESCUENTO CONSUMO COMISARIATO $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)
+%(CD1)FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+%(CD0)%(EF1)DOCUMENTOS COBRADOS%(EF0)%(CD1)
+$(SPACE;0)
+$(SPACE;100)---------------------------
+$(SPACE;110)EMPLEADO
+------------------------------------------------------------------------------------------------------------------------------
+NOMBRE                                    DESCTO. TOTAL         #  TRANS            DOC      SALDO ANT. V.CANCELADO   VALOR DIFERIDO
+------------------------------------------------------------------------------------------------------------------------------
+[/SECTION]
+[SECTION DOCCOBRO; LINEA=0; CAMBIOPAG=T;IMPXPROVCLI=T]
+$(NOMPC1;40) $(PCCOBROTOTAL;8;2)              $(NUMLIN;3) $(TRANS;10) $(NUMDOC;10)          $(SALDOTOTALANTTRANS;8;2)   $(VALORCAN;8;2)   $(SALDOTOTALTRANS;8;2)
+[/SECTION]	

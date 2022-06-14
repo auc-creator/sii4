@@ -1,0 +1,24 @@
+[SECTION CONFIG]    'Formato de impresion para Agroveta 
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 20      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+%(CD1) %(LIN;10)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0) %(LIN;5)
+$(SPACE;10) Cliente: $(NOMCLI;35) $(SPACE;5) RUC: $(RUCCLI;18)  $(SPACE;5) Cuenca, $(FECHATRANS;15;dd/mmmm/yyyy) %(LIN;8)
+$(SPACE;111)  $(PTOTAL2;12;2)
+$(SPACE;43)$(DESCTRANS;50)
+[/SECTION]
+%(LIN;5) $(SPACE;0)
+$(SPACE;8) COD.ITEM $(SPACE;7) DESCRIPCION $(SPACE;45) CANT. $(SPACE;7) P.U. $(SPACE;6)  P.TOTAL %(LIN;4)
+[SECTION ITEM;LINEA=15;CAMBIOPAG=F]   
+          $(CODITEM;10)     $(DESCITEMIVA;50) $(CANT;10;0)    $(PU;12;2)    $(PT;12;2)
+[/SECTION]
+$(SPACE;86) SUBTOTAL $(SPACE;8) $(TOTALSINIVA;12;2)
+$(SPACE;86) IVA 12%  $(SPACE;8) $(RECAR;12;2;IVA)
+$(SPACE;86) TOTAL:  $(SPACE;9) $(PTOTAL2;12;2)
+$(SPACE;0)

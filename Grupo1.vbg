@@ -1,0 +1,5 @@
+VBGROUP 5.0
+StartupProject=..\..\UI\Ui_ado\Sii4_A.vbp
+Project=..\..\DLL\Sii4A32.vbp
+Project=..\..\siibusq\Sii4BusqA.vbp
+Project=..\..\SiiReporte\sii4reportea.vbp

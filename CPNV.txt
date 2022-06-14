@@ -1,0 +1,49 @@
+[SECTION CONFIG]    'Formato de impresion de cobros para COMERCIAL AVILA OCHOA.
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+[/SECTION]
+[/SECTION]
+[SECTION HEADER]
+%(CD1) %(LIN;3.5)
+%(EX1)$(NOMEMP;30)%(EX0) $(SPACE;5) ALMACEN PRINCIPAL
+-------------------------------------------------------------------------------------------------------------------------
+$(SPACE;2)TRANSACCIÓN    : $(CODTRANS;5) $(NUMTRANS;5)  $(SPACE;30)FECHA: Cuenca,$(FECHATRANS;20;dd-mmm-yyyy)
+$(SPACE;2)PROVEEDOR      : $(NOMPROV;35)$(SPACE;8)RUC  : $(RUCPROV;13)
+$(SPACE;2)
+$(SPACE;2)
+%(SB1)        CODIGO                        DESCRIPCION                                     CANTIDAD        COSTO U          TOTAL    %(SB0)
+[/SECTION]
+[SECTION ITEM;LINEA=0;CAMBIOPAG=F]   
+$(NUMLIN;4)    $(CODITEM;16)       $(DESCITEMIVA;55)   $(CANT;4;0)    $(CU;12;2)     $(CT;12;2)
+[/SECTION]
+%(SB1)                                                                                                                                %(SB0)
+               TOTAL:$(SPACE;67)$(CANTTTL;8;2)$(SPACE;18)$(CTOTAL1;12;2)
+
+                                                                    %(SB1)RECAGOS DESCUENTOS                                           %(SB0)
+[SECTION RECARGO; LINEA=0;CAMBIOPAG=F]
+                                                                      $(DESC;38) $(SIGNO;1) $(PORCENT; 4;2)%  $(VALOR;8;2)
+[/SECTION]
+
+%(SB1)                                                                                                                                %(SB0)
+$(SPACE;97) %(EF1) TOTAL COMPRA : $(CTOTAL2;12;2) %(EF0) %(LIN;3.2)
+$(SPACE;0)
+DOCUMENTO ANTICIPOS                           SALDO ANTERIOR                      DESCUENTO                     NUEVO SALDO
+-------------------------------------------------------------------------------------------------------------------------
+[SECTION DOCCOBRO;LINEA=0;CAMBIOPAG=F]   
+$(TRANS;5) $(NUMDOC;5 )                                   $(SALDOTOTALANTTRANS;8;2)                      $(VALORCAN;10;2)                          $(SALDO;10;2)
+[/SECTION]
+$(SPACE;0)
+DOCUMENTOS POR PAGAR                                       FECHA VENCIMIENTO                      VALOR A PAGAR
+-------------------------------------------------------------------------------------------------------------------------
+[SECTION DOCXPAGAR; LINEA=0; CAMBIOPAG=F]
+$(DESC;25) $(NUMDOC;5 )                          $(FVENCI;10;dd/mm/yyyy)                         $(VALOR;8;2)
+[/SECTION]
+$(SPACE;2)
+$(SPACE;50) %(EX1)  TOTAL ANTICIPADO:$(PC_TOTALANTICIPOS;12;2)%(EX0)  
+$(SPACE;2)
+										         Digitado por: $(CODUSUARIO;10)
+$(SPACE;20)______________$(SPACE;12)_______________
+                    Visto Bueno               Recibi Conforme
+%(SPG)		      

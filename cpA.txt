@@ -1,0 +1,22 @@
+[SECTION CONFIG]    'Formato de impresion Generico
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+[/SECTION]                                     
+[SECTION HEADER]
+
+   %(SB1)                                                                                                                            %(SB0)
+               TOTAL:$(SPACE;67)$(CANTTTL;8;2)$(SPACE;18)$(AFCTOTAL1;12;2)
+
+                                                                    %(SB1)RECAGOS DESCUENTOS                                       %(SB0)
+$(SPACE;85)DESCUENTO: $(AFRECAR;10;2;DESCCXITEM)
+$(SPACE;85)IVA      : $(AFRECAR;10;2;IVA)
+
+   %(SB1)                                                                                                                            %(SB0)
+$(SPACE;90) %(EF1) TOTAL : $(AFCTOTAL2;12;2) %(EF0)
+
+											         Digitado por: $(CODUSUARIO;10)
+$(SPACE;20)______________$(SPACE;12)_______________
+                    Visto Bueno               Recibi Conforme
+%(SPG)		      

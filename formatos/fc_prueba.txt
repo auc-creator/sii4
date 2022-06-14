@@ -1,0 +1,15 @@
+[SECTION CONFIG]    'Formato de impresion para Ospina
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 33       'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+NOMBREIMPRESORA = Epson LX-300 (Angel)
+LONGITUDCORTE = 51
+[/SECTION]                                     
+[SECTION HEADER]
+%(LCA)%(CD1)
+$(SPACE;4) $(CODCLI;7) $(SPACE;4) $(NOMCLI;30) $(SPACE;5) CUENCA $(SPACE;3)  $(FECHATRANS;17;dd/mm/yy)
+$(SPACE;5) $(RUCCLI;20) $(SPACE;5) $(DIRCLI;44)
+$(SPACE;0)
+[/SECTION]
+%(SPG)

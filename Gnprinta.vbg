@@ -1,0 +1,4 @@
+VBGROUP 5.0
+Project=gnprinta.vbp
+StartupProject=..\..\UI\Ui_ado\Sii4_A.vbp
+Project=..\..\DLL\Sii4A32.vbp

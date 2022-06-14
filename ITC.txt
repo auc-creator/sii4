@@ -1,0 +1,2 @@
+'Archivo Padre para impresión de facturas y guias de remisión para MP3
+[DOCUMENTO Ingreso;Ingreso/]

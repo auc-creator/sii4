@@ -1,0 +1,29 @@
+[SECTION CONFIG]    'INGRESO DE TESORERIA COBRO PARA HORMIPISOS
+MODO = T
+NUMLINEA = 34
+IGNORARCONTROL = F
+[/SECTION]
+
+
+[SECTION HEADER;TODO=T]
+%(EF1)$(NOMEMP;30)%(EF0)
+RUC:  $(RUCEMP;20)
+                               %(EF1)$(CODTRANS;3) #$(NUMTRANS;8)%(EF0)
+%(CD1)Fecha: $(FECHATRANS;10;dd-mm-yyyy)
+RECIBIDO DE:     $(BENBCOPRI;20)
+POR CONCEPTO DE: $(DESCTRANS;70)  
+TOTAL: %(EF1) $(BCODTTL;18) %(EF0) $(CODMONEDA;5)                COTIZACION: $(COTIZACION;18)
+
+%(SB1)                                                                                                                            %(SB0)
+%(SB1)| COD.CUENTA         | CUENTA                       | DESCRIPCION                  |              DEBE |             HABER |%(SB0)
+[/SECTION]
+[SECTION ASIENTO;LINEA=5;CAMBIOPAG=T]
+| $(CODCTA;19)| $(NOMCTA;29)| $(DESC;29)|$(DEBE;18;2) |$(HABER;18;2) |
+[/SECTION]
+%(SB1)                                                                                                                            %(SB0)
+                                                             TOTAL:                 $(ASIDTTL;18;2)  $(ASIHTTL;18;2)
+
+
+
+REVISADO/REGISTRADO
+CONTADOR

@@ -1,0 +1,33 @@
+ 'IMPRESION DE GUIA DE REMISION
+[SECTION CONFIG]    'Formato de impresión de compra
+MODO = T   ' Indica  si es modo texto  o gráfico
+NUMLINEA = 34     'Numero de líneas  totales
+IGNORACONTROL = F
+[/SECTION]
+[SECTION PARAMETROS;MOTIVTRASL:1,x;MOTIVTRASL:2,x;MOTIVTRASL:3,x;MOTIVTRASL:4,x;MOTIVTRASL:5,x;MOTIVTRASL:6,x;MOTIVTRASL:7,x;MOTIVTRASL:8,x;MOTIVTRASL:9,x;MOTIVTRASL:10,x]
+[/SECTION]
+%(LIN;5) $(SPACE;0)
+$(SPACE;0)
+%(LIN;5) $(SPACE;0) %(EF0) %(CD1)
+$(SPACE;0)
+$(CARGARMOTIVTRASL;Venta,Compra,Transformación,Consignación,Traslado entre establecimientos de una misma empresa,Traslado por emisor itinerante de comprobantes de venta,Devolución,Importación,Exportación,Otros)
+$(SPACE;24)  $(FECINITRASL;25;dd/mm/yy) $(SPACE;26)  $(COMPVTA;10)
+$(SPACE;26)  $(FECFINTRASL;25;dd/mm/yy) $(SPACE;23)  $(FECEMISION;25;dd/mm/yy)%(LIN;4)
+$(SPACE;0)
+   $(MOTIVTRASL;5;1)  $(SPACE;65) $(MOTIVTRASL;5;7)
+   $(MOTIVTRASL;5;2) $(SPACE;23) $(MOTIVTRASL;5;5) $(SPACE;35) $(MOTIVTRASL;5;8)
+   $(MOTIVTRASL;5;3) $(SPACE;65) $(MOTIVTRASL;5;9)
+   $(MOTIVTRASL;5;4) $(SPACE;23) $(MOTIVTRASL;5;6) $(SPACE;35) $(MOTIVTRASL;5;10) %(LIN;4)
+
+$(SPACE;20)$(FECEMISION;25;dd/mm/yy) %(LIN;4)$(SPACE;34)$(PTOPART;45)%(LIN;4.5) 
+$(SPACE;0)
+$(SPACE;19)$(NOMDEST;30) $(SPACE;25)$(RUCDEST;25) 
+$(SPACE;14) $(PTOLLEG;35) %(LIN;6)
+$(SPACE;0)
+$(SPACE;18)  $(NOMTRANSP;30) $(SPACE;22) $(RUCTRANSP;15) %(LIN;4.5)
+$(SPACE;0) 
+$(SPACE;0) %(LIN;5)
+[SECTION ITEM;LINEA=15;CAMBIOPAG=F]   
+  $(DESCITEMIVA;61) $(CANT;10;0)        $(UNIDAD;10)        
+[/SECTION] 
+  $(SPACE;46)CANTIDAD TOTAL: $(CANTTTL;10;0) %(CD0)

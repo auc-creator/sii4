@@ -1,0 +1,27 @@
+[SECTION CONFIG]    'Formato de impresion para ALPHAB.
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+%(CD0) %(LIN;4.5) ALPHAB MUEBLES S.A.
+$(SPACE;3) INGRESO DE PRODUCTO TERMINADO $(SPACE;5) $(CODTRANS;8) $(SPACE;2) $(NUMTRANS;8) %(CD1)
+$(SPACE;70) $(FECHATRANS;20;dd-mmm-yyyy)
+$(SPACE;3) $(DESCTRANS;70)
+$(SPACE;3) $(NOMMONEDA;10) $(SPACE;10) Cotización:$(COTIZACION;10;2)  # Doc.Ref: $(NUMDOCREF;10)
+$(SPACE;3) 
+---------------------------------------------------------------------------------------------------------------------
+ #   CODIGO 			D E S C R I P C I O N	 		   CANTIDAD		C.UNIT	 C.TOTAL
+--------------------------------------------------------------------------------------------------------------------- %(CD0) %(LIN;3.5)
+[SECTION ITEM;LINEA=10;CAMBIOPAG=F]
+$(NUMLIN;3)  $(CODITEM;10) $(DESCITEMIVA;27) $(CANT;8;0) $(PUR;10;2) $(PTR;10;2)
+[/SECTION]
+%(CD1)---------------------------------------------------------------------------------------------------------------------- %(CD0) %(LIN;5)
+$(SPACE;59)TOTAL                                              $(PTOTAL1;10;2)  %(CD1)
+$(SPACE;3) 
+$(SPACE;3) 
+$(SPACE;10) _______________              ______________               $(SPACE;10) DIGITADO POR:$(NOMUSUARIO;15) 
+$(SPACE;10)    Entregado por                       Recibido                           
+$(SPACE;10)    
+$(SPACE;10)   FECHA:

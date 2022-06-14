@@ -1,0 +1,33 @@
+[SECTION CONFIG]    'Formato de impresion para COMERCIAL AVILA OCHOA.
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+%(CD1) %(LIN;4)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;6) $(CODTRANS;5) $(NUMTRANS;5) $(SPACE;8) $(RUCCLI;20)
+$(SPACE;2) $(NOMCLI;45)
+$(SPACE;3)$(DIRCLI;35)$(SPACE;6)Telf: $(TELCLI;12)$(SPACE;3)Dig: $(CODUSUARIO;12)
+$(SPACE;0) $(FECHATRANS;20;dd-mmm-yyyy)  $(SPACE;42)Ven: $(CODVENDE;12)
+[/SECTION]
+$(SPACE;0)%(LIN;4.8)
+$(SPACE;0) %(LIN;3.33)
+[SECTION ITEM;LINEA=17;CAMBIOPAG=T]   
+ $(CODITEM;3) $(DESCITEMIVA;29)$(CANT;8;0)$(PU;10;2)$(PORDESC;10;2)  $(PT;12;2)
+[/SECTION]
+SON: $(PTOTAL2;67;2;L)
+[SECTION DOCXCOBRAR;LINEA=1;CAMBIOPAG=F]   'OCUPA SOLAMENTE UNA LINEA
+FORMA DE PAGO: $(DESC;20) VENCE: $(FVENCI;20;dd-mmmm-yyyy)
+[/SECTION] %(LIN;4)
+$(SPACE;57)SUMA 12%:$(TOTALCONIVA;10;2)
+$(SPACE;57)IVA 12:  $(RECAR;10;2;IVA)
+$(SPACE;57)SUMA 0%: $(TOTALSINIVA;10;2)
+---------------      ---------------    ---------------  FLETE:$(RECAR;13;2;FLETE)
+     CLIENTE             VENDEDOR            BODEGA      TOTAL:$(PTOTAL2;13;2)
+$(SPACE;0)
+$(SPACE;2)$(DESCTRANS;80;2)
+%(SPG)

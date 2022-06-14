@@ -1,0 +1,27 @@
+[SECTION CONFIG]    'Formato de impresion para Ospina Correa
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:TODOS]
+[/SECTION]
+[SECTION HEADER]
+%(CD1) %(LIN;8) '7.75)
+$(SPACE;0)
+%(LIN;7)$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+ $(SPACE;7)$(FECHATRANS;15;dd-mmm-yyyy) 
+$(SPACE;85) $(RUCPROV;13)$(SPACE;22) $(CODTRANS;6)
+$(SPACE;4)$(NOMPROV;40) $(SPACE;45) $(TOTRET;7;2) 
+$(SPACE;0)
+$(SPACE;17) $(TOTRET;90;2;L) 
+[/SECTION]
+%(LIN;5) $(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+[SECTION RETENCION;LINEA=12;CAMBIOPAG=F;PARAMETROS=TODOS]
+      $(SPACE;63)$(PORCENT;22)  'descripcion de la retención $(HABER;20;2)
+[/SECTION]
+%(LIN;8.5) $(SPACE;117) %(CD0)

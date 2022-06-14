@@ -1,0 +1,34 @@
+[SECTION CONFIG]    'Formato de impresion de cobros para COMERCIAL AVILA OCHOA.
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+%(CD1) %(LIN;4)
+$(SPACE;0)
+$(SPACE;0)
+ %(EX1)  $(NOMEMP;24)%(EX0) pagina: $(NUMPAG)%(EF0)
+------------------------------------------------------------------------
+$(SPACE;2)TRANSACCIÓN    : $(CODTRANS;5) $(NUMTRANS;5) $(SPACE;8) $(RUCCLI;20)
+$(SPACE;2)FECHA          : $(FECHATRANS;20;dd-mmm-yyyy)  
+$(SPACE;2)CLIENTE        : $(NOMCLI;45)
+$(SPACE;2)DIRECCION      : $(DIRCLI;35)$(SPACE;4)Telf: $(TELCLI;12)
+$(SPACE;2)POR CONCEPTO DE: $(DESCTRANS;25)$(SPACE;3)Dig: $(CODUSUARIO;12)
+[/SECTION]
+$(SPACE;0)%(LIN;4.8)
+$(SPACE;0)
+------------------------------------------------------------------------
+DOCUMENTO                VALOR           VALOR PAGO          SALDO
+------------------------------------------------------------------------
+[SECTION DOCCOBRO;LINEA=5;CAMBIOPAG=F]   
+$(TRANS;17)        $(VALORDOC;7;2)         $(VALORCAN;10;2)          $(SALDO;10;2)
+[/SECTION] %(LIN;4)
+------------------------------------------------------------------------
+				SUMAN:     $(BCODTTL;10;2) 
+
+
+	---------------                          ---------------    
+	RECIBI CONFORME                              REVISADO             
+
+%(SPG)

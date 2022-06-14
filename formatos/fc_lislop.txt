@@ -1,0 +1,36 @@
+[SECTION CONFIG]    'Nuevo Formato de impresion para LISLOP
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 34     'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION HEADER]
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+%(LIN;3)$(SPACE;0)
+%(EF1)%(CD1)%(LIN;4.4)
+$(SPACE;9)Cuenca,$(SPACE;2)$(FECHATRANS;20;dd/MM/yyyy)
+$(SPACE;9)$(NOMCLI;43)$(SPACE;2)$(RUCCLI;15)
+$(SPACE;9)$(DIRCLI;43)$(SPACE;2)$(TELCLI;15) 
+$(SPACE;9)$(CIUCLI;43)$(SPACE;2)$(CODVENDE;5)$(NOMVENDE; 10)
+[/SECTION]
+%(SB1)                                                                   %(SB0)
+%(SB1) CANTIDAD CODIGO   DESCRIPCION           P.UNITARIO       P.TOTAL  %(SB0)
+[SECTION ITEM;LINEA=11;CAMBIOPAG=T]   ' Siempre  ocupa 8 lineas
+$(CANT;9;2)  $(CODITEM;8)$(DESCITEM;20)$(PU;12;2)  $(PT;12;2)
+[/SECTION]
+%(SB1)                                                                   %(SB0)
+$(SPACE;45)        $(PRTOTAL;12;2)
+[SECTION DOCXCOBRAR;LINEA=1;CAMBIOPAG=T]   'OCUPA SOLAMENTE UNA LINEA
+       Forma de Pago: $(DESC;80)
+[/SECTION]
+      SON: $(PTOTAL2;50;2;L)
+$(SPACE;45)        $(RECAR;12;2;IVA)
+$(SPACE;45)        $(RECAR;12;2;FLETE)
+$(SPACE;0)
+$(SPACE;45)        $(PTOTAL2;12;2)'Total factura
+%(EF0)

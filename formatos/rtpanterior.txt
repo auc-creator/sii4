@@ -1,0 +1,22 @@
+[SECTION CONFIG]    'Formato de impresion paraLislop
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:TODOS]
+[/SECTION]
+[SECTION HEADER]
+%(CD1) %(LIN;8) '7.75)
+$(SPACE;0)
+%(LIN;7)$(SPACE;0)
+$(SPACE;0)
+ $(SPACE;7) $(NOMPROV;10) $(SPACE;5)  $(FECHATRANS;15;dd-mmm-yyyy)
+ $(RUCPROV;13)                                            $(CODTRANS;6)
+$(DIRPROV;20)                   $(NUMDOCREF;5)
+[/SECTION]
+%(LIN;5) $(SPACE;0)
+[SECTION RETENCION;LINEA=12;CAMBIOPAG=F;PARAMETROS=TODOS]
+      $(SPACE;60)   $(BASE;20;2)$(PORCENT;12)  $(HABER;20;2)
+[/SECTION]
+%(LIN;8.5) $(SPACE;117)    $(TOTRET;7;2) %(CD0)

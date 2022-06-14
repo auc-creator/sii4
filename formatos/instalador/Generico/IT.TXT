@@ -1,0 +1,40 @@
+[SECTION CONFIG]    'Formato de impresion de cobros .
+MODO = T            'Indica  si es modo texto  o grafico ALPHAB
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:TODOS]
+[/SECTION]
+[SECTION HEADER]
+%(CD1)%(LIN;7)%(EX1)$(SPACE;20)$(NOMEMP;55)%(EX0)      
+
+
+%(LIN;3.5)%(EF1)$(SPACE;43)INGRESO DE TESORERIA $(CODTRANS;3)- $(NUMTRANS;5)%(EF0)
+$(SPACE;2)
+$(SPACE;2)FECHA          : %(EF1)$(FECHATRANS;10;dd/mm/yyyy) $(HORATRANS;5;HH:MM)%(EF0)                 Digitado por: $(CODUSUARIO;20)
+$(SPACE;2)POR CONCEPTO DE: %(EF1)$(DESCTRANS;50)%(LIN;3)%(EF0)
+--------------------------------------------------------------------------------------------------------------------
+DOCUMENTO         PROVEEDOR/CLIENTE                                   VALOR           VALOR PAGO           SALDO
+--------------------------------------------------------------------------------------------------------------------
+[/SECTION]
+[SECTION DOCCOBRO;LINEA=8;CAMBIOPAG=T]   
+$(TRANS;7)   $(NUMDOC;5)    $(NOMPC;25 )                           $(VALORDOC;7;2)      $(VALORCAN;10;2)       $(SALDO;10;2)
+[/SECTION]
+[SECTION DOCPAGO;LINEA=8;CAMBIOPAG=T]   
+$(TRANS;7)   $(NUMDOC;5)    $(NOMPC;25 )                           $(VALORDOC;7;2)      $(VALORCAN;10;2)       $(SALDO;10;2)
+[/SECTION]
+--------------------------------------------------------------------------------------------------------------------
+[SECTION BANCO;LINEA=8;CAMBIOPAG=T]   
+$(NOMTIPODOC;25) # $(NUMDOC;5)                                                     $(VALOR;7;2)     $(OBSERVA;20;0)
+[/SECTION]
+Retencion:                                                                       $(TOTRET;12;2)
+--------------------------------------------------------------------------------------------------------------------
+Total Cancelacion:                                                               $(DOCCOBROTTLR;12;2)
+
+
+
+
+                    ---------------                                       ---------------    
+                    RECIBI CONFORME                                          REVISADO 
+%(SPG)

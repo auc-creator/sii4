@@ -1,0 +1,19 @@
+'Este es el formato para el Documento de Memorandum para despacho de productos de Hormipisos
+<FORMATO Nombre="Ingreso a Bodega";TamañoPapel=160x220;TipoLetra="Arial";
+	TamañoLetra=10;MargenSup=5;MargenInf=10;MargenDer=12;MargenIzq=80> 
+
+	<CAMPO CodCampo=NOMPROV;posX=30;posY=36;Ancho=80;CAB=SI/> 'NOMBRE PROVEEDOR
+	<CAMPO CodCampo=DIRPROV;posX=30;posY=42;Ancho=40;CAB=SI/>	'DIRECCION PROVEEDOR
+	<CAMPO CodCampo=NUMDOCREF;posX=35;posY=49;Ancho=40;CAB=SI/> '# DOCUMENTO REFERENCIA
+	<CAMPO CodCampo=NOMTRANSP;posX=38;posY=55;Ancho=80;CAB=SI/> 'NOMBRE DE TRANSPORTISTA
+
+	<CAMPO CodCampo=IMPPARAM;Parametros=ITEM,DESCITEM,CEMENTO,CANT;posX=120;posY=75;Ancho=25;Alineacion=DERECHA;FormatString="##0";CAB=SI/> 'VALOR DE CANTIDAD EN CEMENTO
+	<CAMPO CodCampo=IMPPARAM;Parametros=ITEM,DESCITEM,ARENA,CANT;posX=120;posY=85;Ancho=25;Alineacion=DERECHA;FormatString="##0";CAB=SI/> 'VALOR DE CANTIDAD EN ARENA
+	<CAMPO CodCampo=IMPPARAM;Parametros=ITEM,DESCITEM,CHISPA,CANT;posX=120;posY=95;Ancho=25;Alineacion=DERECHA;FormatString="##0";CAB=SI/> 'VALOR DE CANTIDAD EN CHISPA
+	<CAMPO CodCampo=IMPPARAM;Parametros=ITEM,DESCITEM,GRAVILLA,CANT;posX=120;posY=105;Ancho=25;Alineacion=DERECHA;FormatString="##0";CAB=SI/> 'VALOR DE CANTIDAD EN GRAVA
+	<CAMPO CodCampo=IMPPARAM;Parametros=ITEM,DESCITEM,PIGMENTO,CANT;posX=120;posY=115;Ancho=25;Alineacion=DERECHA;FormatString="##0";CAB=SI/> 'VALOR DE CANTIDAD EN PIGMENTO
+	<CAMPO CodCampo=IMPPARAM;Parametros=ITEM,DESCITEM,NEGRO DE HUMO,CANT;posX=120;posY=125;Ancho=25;Alineacion=DERECHA;FormatString="##0";CAB=SI/> 'VALOR DE CANTIDAD EN NEGRO HUMO	
+
+	<CAMPO CodCampo=FECHATRANS;posX=30;posY=174;Ancho=45;Alineacion=DERECHA;formatstring="dd/mmm/yyyy";CAB=SI/> 'FECHA 
+</FORMATO>
+

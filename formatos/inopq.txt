@@ -1,0 +1,27 @@
+[SECTION CONFIG]    'Formato de impresion para Planta de Hormipisos 
+ MODO = T            'Indica  si es modo texto  o grafico
+ NUMLINEA = 28       'Numero de lineas  totales
+ IGNORACONTROL = F
+ HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+ $(SPACE;1)%(LIN;2)
+ %(CD0) %(EX1)%(EF1)$(SPACE;1)$(NOMEMP;30) %(EF0) %(EX0)%(CD1)%(LIN;5) 
+[/SECTION]
+Transaccion: $(CODTRANS;10) $(NUMTRANS;4)        $(SPACE;25)Fecha: $(FECHATRANS;15;dd-mmm-yyyy)
+Descripcion: $(DESCTRANS;42) $(SPACE;5)Usuario: $(CODUSUARIO;15)	
+Proveedor: $(NOMPROV; 25)          RUC: $(RUCPROV;13)
+Direccion: $(DIRPROV; 25)
+%(LIN;5)$(SPACE;0)%(SB1)$(SPACE;121)%(SB0)
+%(SB1)  # CODBOD CODIGO $(SPACE;15)DESCRIPCION $(SPACE;60)CANTIDAD    UND   %(SB0)
+[SECTION ITEM;LINEA=10;CAMBIOPAG=T]   
+$(NUMLIN;3) $(CODBOD;5)  $(CODITEM;20)  $(DESCITEM;72) $(CANT;7;2)   $(UNIDAD;10)  
+[/SECTION]
+%(SB1)$(SPACE;121)%(SB0)
+$(SPACE;95)TOTAL: $(CANTTTL;7;2)
+$(SPACE;0)
+$(SPACE;0)
+            _______________________                                          
+                Responsable                                                  
+%(SPG)
+

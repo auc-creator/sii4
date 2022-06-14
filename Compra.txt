@@ -1,0 +1,33 @@
+[SECTION CONFIG]    'Formato de impresion Generico
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+[/SECTION]                                     
+[SECTION HEADER]
+%(LIN;4)     %(EX1)  $(NOMEMP;24)%(EX0) 
+$(SPACE;30)%(EF1) $(NOMGNTRANS;15) No. $(CODTRANS;5)-$(NUMTRANS;5)%(EF0)%(CD1)
+$(SPACE;5)Descripcion: $(DESCTRANS; 30)  Fecha: $(FECHATRANS;15;dd-mmmm-yyyy) 
+$(SPACE;5)Nombre: $(NOMPROV;30) $(SPACE;5) Ruc/CI: $(RUCPROV;15)
+$(SPACE;5)Dirección: $(DIRPROV;30) $(SPACE;3)Teléfono: $(TELPROV;15) #Doc: $(NUMDOCREF;20) %(LIN;4)
+[/SECTION]
+
+    %(SB1)     CODIGO                        DESCRIPCION                  PH  GRASA PROTEINA   AGUA  QUIO  REDUC MERMA VALMERMA CTM  %(SB0)
+[SECTION ITEM;LINEA=0;CAMBIOPAG=F]   
+$(NUMLIN;4)    $(CODITEM;10)    $(DESCITEMIVA;45)    $(PH;5;2) $(GRASA;5;2) $(PROTEINA;5;2) $(AGUA;5;2) $(NUMDIAS;5;2) $(REDUC;5;2) $(MERMA;5;2) $(VALMERMA;5;2) $(CTM;5;2)
+[/SECTION]
+   %(SB1)                                                                                                                            %(SB0)
+               TOTAL:$(SPACE;67)$(CANTTTL;8;2)$(SPACE;18)$(CTOTAL1;12;2)
+
+                                                                    %(SB1)RECAGOS DESCUENTOS                                       %(SB0)
+[SECTION RECARGO; LINEA=0;CAMBIOPAG=F]
+                                                                      $(DESC;38) $(SIGNO;1) $(PORCENT; 4;2)%  $(VALOR;8;2)
+[/SECTION]
+   %(SB1)                                                                                                                            %(SB0)
+$(SPACE;90) %(EF1) TOTAL : $(CTOTAL2;12;2) %(EF0)
+
+                                                                     TOTAL:  $(ASIDTTL;18;2) $(ASIHTTL;19;2)
+
+											         Digitado por: $(CODUSUARIO;10)
+$(SPACE;20)______________$(SPACE;12)_______________
+                    Visto Bueno               Recibi Conforme%(SPG)		      

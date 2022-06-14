@@ -1,0 +1,33 @@
+[SECTION CONFIG]    INGRESO DE TESORERIA LIBRERIAS AlvisaPrintTxtA 
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+[/SECTION]
+[SECTION HEADER;TODO=T]
+%(EX1)%(EF1)$(NOMEMP;30)%(EF0)%(EX0)%(LIN;3.5)
+%(EF1)INGRESO DE BANCOS $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)
+POR CONCEPTO DE: $(DESCTRANS;180)
+%(CD1)FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+[/SECTION]
+
+
+%(SB1)#  BANCO                     DOC                    Nombre                         F.VENCIM.      VALOR   OBSERVACION%(SB0)
+[SECTION BANCO;NUMLINEA=0;CAMBIOPAG=F]
+$(NUMLIN;2) $(NOMBANCO;25) $(NOMTIPODOC;15)$(NUMDOC;7) $(NOMBRE;30) $(FVENCI;10;dd/mm/yy) $(VALOR;10;2) $(OBSERVA;10)
+[/SECTION]
+_____________________________________________________________________________________________________________________
+   TOTAL:                                                                                     $(BCOTTL;10;2)
+
+%(SB1)#  COD.CUENTA      CUENTA                    DESCRIPCION                                  DEBE              HABER%(SB0)
+[SECTION ASIENTO]
+$(NUMLIN;2) $(CODCTA;15) $(NOMCTA;25) $(DESC;30) $(DEBE;18;2) $(HABER;18;2)
+[/SECTION]
+__________________________________________________________________________________________________________________
+   TOTAL:                                                                   $(ASIDTTL;18;2) $(ASIHTTL;18;2)
+
+
+
+											         Digitado por: $(CODUSUARIO;10)
+$(SPACE;20)______________$(SPACE;12)_______________$(SPACE;12)____________
+                    Contabilidad               Auditoria               Recibiconforme
+%(SPG)		      

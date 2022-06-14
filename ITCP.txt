@@ -1,0 +1,47 @@
+[SECTION CONFIG]    'Formato de impresion de cobros .
+MODO = T            'Indica  si es modo texto  o grafico SARVATRUCK
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:TODOS]
+[/SECTION]
+[SECTION HEADER]
+%(CD1)%(LIN;7)%(EX1)$(SPACE;20)$(NOMEMP;25)%(EX0)      
+%(LIN;3.5)%(EF1)$(SPACE;15)INGRESO DE TESORERIA CHEQUE POSFECHADO %(EF0)
+$(SPACE;2)$(CODTRANS;3)- $(NUMTRANS;5)
+$(SPACE;2)FECHA          : $(FECHATRANS;10;dd/mm/yyyy) $(HORATRANS;5;HH:MM)                 Digitado por: $(CODUSUARIO;20)
+$(SPACE;2)POR CONCEPTO DE: $(DESCTRANS;50)%(LIN;3)%(EF0)
+--------------------------------------------------------------------------------------------------------------------
+DOCUMENTO         PROVEEDOR/CLIENTE                                   VALOR           VALOR PAGO           SALDO
+--------------------------------------------------------------------------------------------------------------------
+[/SECTION]
+[SECTION DOCCOBRO;LINEA=0;CAMBIOPAG=F]   
+$(TRANS;7)   $(NUMDOC;5)    $(NOMPC;25 )                           $(VALORDOC;7;2)      $(VALORCAN;10;2)       $(SALDO;10;2)
+[/SECTION]
+[SECTION DOCPAGO;LINEA=0;CAMBIOPAG=F]   
+$(TRANS;7)   $(NUMDOC;5)    $(NOMPC;25 )                           $(VALORDOC;7;2)      $(VALORCAN;10;2)       $(SALDO;10;2)
+[/SECTION]
+--------------------------------------------------------------------------------------------------------------------
+Total Cancelacion:                                                               $(DOCCOBROTTLR;12;2)
+$(SPACE;2)
+--------------------------------------------------------------------------------------------------------------------
+DOCUMENTO         PROVEEDOR/CLIENTE                   F.VENCI       VALOR          OBSERVACION
+--------------------------------------------------------------------------------------------------------------------
+[SECTION DOCXCOBRAR;LINEA=0;CAMBIOPAG=F]   
+$(NUMDOC;15)   $(NOMCLI;25 )           $(FVENCI;10;dd/mm/yyyy) $(VALOR;8;2)   $(OBSERVA; 40)
+[/SECTION]
+[SECTION DOCXPAGAR;LINEA=0;CAMBIOPAG=F]   
+$(NUMDOC;15)   $(NOMCLI;25 )           $(FVENCI;10;dd/mm/yyyy) $(VALOR;8;2)   $(OBSERVA; 40)
+[/SECTION]
+--------------------------------------------------------------------------------------------------------------------
+Total Credito:                                                               $(DOCXCOBTTL;12;2)
+
+
+
+
+
+
+                    ---------------                                       ---------------    
+                    RECIBI CONFORME                                          REVISADO 
+%(SPG)

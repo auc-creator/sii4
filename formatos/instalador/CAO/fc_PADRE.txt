@@ -1,0 +1,4 @@
+'Archivo Padre para impresión de facturas y guias de remisión para Avila Ochoa
+[DOCUMENTO Factura de Cliente;Factura/]
+[DOCUMENTO Guia de Remisión;Guia/]
+

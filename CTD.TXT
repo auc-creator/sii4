@@ -1,0 +1,28 @@
+[SECTION CONFIG]    'ASIENTO
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+[/SECTION]
+[SECTION HEADER;TODO=T]
+%(LIN;4)   %(EF1)$(NOMEMP;30) %(EF0)
+   %(EF1)EGRESO DE BANCOS $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)
+ $(SPACE;50)   %(CD1) FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+  Por concepto de:   $(DESCTRANS;30) %(CD0)
+$(NUMDOCREF;20)
+$(DESCTIPOTRANSAFECTASRI;20)
+[/SECTION]
+%(CD1) %(LIN;4.5)
+%(EF1) Asiento Contable %(EF0)
+  COD.CUENTA	CUENTA		         DESCRIPCION				       DEBE	           HABER      %(LIN;4)
+------------------------------------------------------------------------------------------------------------------------------------
+[SECTION ASIENTO;LINEA=15;CAMBIOPAG=F]
+   $(CODCTA;15)  $(NOMCTA;25) $(DESC;30) $(DEBE;18;2) $(HABER;19;2)
+[/SECTION]
+                                                                     TOTAL:  $(ASIDTTL;18;2) $(ASIHTTL;19;2)
+
+
+											         Digitado por: $(CODUSUARIO;10)
+          ______________	               ____________	
+		 Visto Bueno		         Recibido	
+$(SPACE;0) %(LIN;11.8)
+$(SPACE;0) 

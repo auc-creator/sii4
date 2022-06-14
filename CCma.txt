@@ -1,0 +1,96 @@
+[SECTION CONFIG]    'Formato de impresion para PUNTO DE VENTA 29/09/04 jeaa
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+MARGENIZQ=0
+[/SECTION]
+[SECTION HEADER]
+%(CD0)%(EF1)%(EX1)
+$(SPACE;7)$(NOMEMP;21)
+%(EF0)%(EX0)
+$(SPACE;5)CIERRE DE CAJA $(CODTRANS;5) #$(NUMTRANS;8)
+FECHA:$(FECHATRANS;15;dd-mmm-yyyy)A
+%(CD1)POR CONCEPTO DE: 
+$(DESCTRANS;80)%(LIN;3.5)
+[/SECTION]
+%(EX0)%(EF0)
+DETALLE EFECTIVO
+--------------------------------------------------------------------------------------
+     DENOMINACION      CANT              VALOR
+--------------------------------------------------------------------------------------
+[SECTION DETEFECTIVO; LINEA=0; CAMBIOPAG=F]
+$(DESC;30) $(CANT;6) $(VALOR;12;2)
+[/SECTION]
+
+DETALLE TARJETAS
+--------------------------------------------------------------------------------------
+TRANS           TARJETA        CLIENTE                            AUTO        VALOR
+--------------------------------------------------------------------------------------
+[SECTION DETTARJETA; LINEA=0; CAMBIOPAG=F]
+$(TRANS;15) $(CODTARJETA;12) $(TITULAR;35) $(AUTORIZA;10) $(VALOR;12;2)
+[/SECTION]
+RESUMEN TARJETAS
+--------------------------------------------------------------------------------------
+TARJETA            VALOR
+--------------------------------------------------------------------------------------
+[SECTION TOTTARJETA; LINEA=0; CAMBIOPAG=F]
+$(CODTARJETA;12) $(VALOR;12;2)
+[/SECTION]
+
+DETALLE CHEQUES
+--------------------------------------------------------------------------------------
+TRANS                BANCO        CLIENTE     No. CHE        VALOR
+--------------------------------------------------------------------------------------
+[SECTION DETCHEQUE; LINEA=0; CAMBIOPAG=F]
+$(TRANS;15) $(CODBANCO;10) $(TITULAR;35) $(NUMCHE;10) $(VALOR;12;2)
+[/SECTION]
+
+DETALLE VENTAS A CREDITO
+--------------------------------------------------------------------------------------
+TRANS              NOMBRE                  VALOR
+--------------------------------------------------------------------------------------
+[SECTION DETVCREDITO; LINEA=0; CAMBIOPAG=F]
+$(TRANS;15) $(NOMBRE;55) $(VALOR;12;2)
+[/SECTION]
+
+DETALLE RECUPERACION DE C ARTERA
+--------------------------------------------------------------------------------------
+TRANS      NOMBRE                  VALOR
+--------------------------------------------------------------------------------------
+[SECTION DETINGRESO; LINEA=0; CAMBIOPAG=F]
+$(TRANS;15) $(NOMBRE;35) $(VALOR;12;2)
+[/SECTION]
+--------------------------------------------------------------------------------------
+
+TOTAL EFECTIVO:            $(TOTALDETEFECTIVO;12;2)
+TOTAL TARJETAS:            $(TOTALDETTARJETA;12;2)
+TOTAL CHEQUES :            $(TOTALDETCHEQUE;12;2)
+TOTAL MANUALES:            $(TOTALDETVMANUAL;12;2)
+TOTAL CREDITOS:            $(TOTALDETVCREDITO;12;2)
+                    ____________________
+TOTAL INGRESOS:            $(TOTALDETINGRESOS;12;2)
+
+TOTAL CIERRE:             $(TOTALCIERRECAJA;12;2)
+
+TOTAL VENTAS  :          %(EX1)$(DETTOTAL;12;2)%(EX0)
+TOTAL DEPOSITO:          %(EX1)$(TOTALDEPOSITOCIERRECAJA;12;2)%(EX0)
+
+
+-------------------------------------------------------------
+RESUMEN
+------------------------------------------------------------------
+      DESCRIPCION                VALORSIS   VALORDOC    DIFERENCIA         
+------------------------------------------------------------------
+[SECTION TSRESUMEN;LINEA=0;CAMBIOPAG=F]
+     $(DESC;20) $(VALORSIS;12;2) $(VALORDOC;12;2) $(DIF;12;2)
+[/SECTION]
+--------------------------------------------------------------
+TOTAL:                           $(TSVALORSIS;12;2)    $(TSVALORDOC;12;2)
+
+
+----------------------------
+%(CMD;27-33-24)$(CODUSUARIO;20)%(CMD;27-33-9)
+$(SPACE;1)
+$(DETALLETRANSIV;40)
+%(SPG)

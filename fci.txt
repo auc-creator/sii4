@@ -1,0 +1,61 @@
+[SECTION CONFIG]    'Formato de impresion auc
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 70      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+[/SECTION]                                     
+[SECTION HEADER]
+%(CD1)%(LIN;10)$(SPACE;10)
+%(LIN;5) $(SPACE;0)
+$(SPACE;60)$(CODTRANS;4) $(NUMTRANS;4)%(LIN;2)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;15)$(NOMCLI;50)$(SPACE;45) VEN:$(CODVENDE;10)%(LIN;4)
+$(SPACE;15)$(FECHATRANS;15;dd-mmm-yyyy)$(SPACE;11) $(RUCCLI;15)$(SPACE;20) $(CIUCLI;15)$(SPACE;18)$(TELCLI;10)
+$(SPACE;15)$(DIRCLI;50)
+$(SPACE;0)%(LIN;16)
+$(SPACE;0)%(LIN;5)
+[/SECTION]
+[SECTION ITEM;LINEA=15;CAMBIOPAG=F]
+ $(CODITEM;10;0)  $(ORDEN;2)  $(CANT;5;0)       $(DESCITEMIVA;10)-$(CODPROCESADO;10)   $(NUMINGRESO;10)  $(TIKET;10;0)    $(PU;12;2)          $(PT;12;2)$(MARCAPRECIOANT;2)
+[/SECTION]
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;110)$(PTOTAL1;12;2)
+[SECTION RECARGO;LINEA=1;CAMBIOPAG=F]
+                                                                                          $(PORCENT;10;0% )%(LIN;0.1)
+[/SECTION]
+$(SPACE;110)$(RECAR;12;2;DESC)%(LIN;4)
+$(SPACE;110)$(VNETO;12;2)
+$(SPACE;98)12          $(RECAR;12;2;IVA)
+$(SPACE;110)$(TOTALSINIVA;12;2)%(LIN;0.5)
+[SECTION DOCXCOBRAR;LINEA=3;CAMBIOPAG=F]
+   $(COD; 10)     $(VALOR;12;2)                $(FVENCI;15;dd-mmm-yyyy)%(LIN;3)
+[/SECTION]
+$(SPACE;110)%(EF1)$(PTOTAL2;12;2)%(EF0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;15)$(CODUSUARIO;12;2)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;110)%(EF1)$(PTOTAL2;12;2)%(EF0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;15)Fecha Emision:$(FGRABADO;15;dd-mmm-yyyy)%(LIN;4)$(SPACE;40) $(NOMCLI;50)
+$(SPACE;15)$(CODTRANS;4) $(NUMTRANS;4)
+%(CD0)
+%(SPG)

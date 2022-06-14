@@ -1,0 +1,65 @@
+[SECTION CONFIG]    'INGRESO DE TESORERIA PAGO GENERICO
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+[/SECTION]
+[SECTION HEADER;TODO=T]
+%(CD0)$(NOMEMP;30)%(LIN;3.5)
+%(EF1)CIERRE DE CAJA $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)
+%(CD1)FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+POR CONCEPTO DE: 
+$(DESCTRANS;50)
+[/SECTION]
+
+%(CD0)%(EF1)DETALLE EFECTIVO%(EF0)%(CD1)
+-------------------------------
+#  TRANS        VALOR CANCELADO
+-------------------------------
+[SECTION DETEFECTIVO; LINEA=0; CAMBIOPAG=F]
+$(CANT;6)  $(DESC;20) $(VALOR;12;2)
+[/SECTION]
+-------------------------------
+%(EX1)TOTAL:%(EX0) $(TOTALDETEFECTIVO;12;2)
+
+
+%(CD0)%(EF1)DETALLE TAJETAS%(EF0)%(CD1)
+-------------------------------
+#  TRANS        VALOR CANCELADO
+-------------------------------
+[SECTION DETTARJETA; LINEA=0; CAMBIOPAG=F]
+$(CODTARJETA;10) $(TITULAR;20) $(VALOR;12;2)
+[/SECTION]
+-------------------------------
+%(EX1)TOTAL:%(EX0)$(TOTALDETTARJETA;12;2)
+
+%(CD0)%(EF1)DETALLE CHQUES%(EF0)%(CD1)
+-------------------------------
+#  TRANS        VALOR CANCELADO
+-------------------------------
+[SECTION DETCHEQUE; LINEA=0; CAMBIOPAG=F]
+$(CODBANCO;10) $(TITULAR;20) $(VALOR;12;2)
+[/SECTION]
+-------------------------------
+%(EX1)TOTAL:%(EX0)$(TOTALDETCHEQUE;12;2)
+
+
+%(CD0)%(EF1)DETALLE MANUALES%(EF0)%(CD1)
+-------------------------------
+#  TRANS        VALOR CANCELADO
+-------------------------------
+[SECTION DETVMANUAL; LINEA=0; CAMBIOPAG=F]
+$(CANT;6)  $(DESC;20) $(VALOR;12;2)
+[/SECTION]
+-------------------------------
+%(EX1)TOTAL:%(EX0)$(TOTALDETVMANUAL;12;2)
+
+
+TOTAL EFECTIVO: $(TOTALDETEFECTIVO;12;2)
+TOTAL TARJETAS: $(TOTALDETTARJETA;12;2)
+TOTAL CHEQUES : $(TOTALDETCHEQUE;12;2)
+TOTAL MANUALES: $(TOTALDETVMANUAL;12;2)
+
+
+
+______________________	             
+$(CODUSUARIO;10)

@@ -1,0 +1,5 @@
+[History]
+1=#P0#=mb	#P1#=ProcesaVariable	#P2#=GNPrintA/clsDocXCobrarEmp/ProcesaVariable	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20190312160423	#P7#=0	#P8#=24	.
+2=#P0#=mb	#P1#=PrintTransMain	#P2#=GNPrintA/clsDocXCobrarEmp/PrintTransMain [Set]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20190312160405	#P7#=0	#P8#=2	.
+3=#P0#=mb	#P1#=ImprimirDocumento	#P2#=GNPrintA/PrintTrans/ImprimirDocumento	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20190311130259	#P7#=0	#P8#=15	.
+4=#P0#=mb	#P1#=ProcesaVariable	#P2#=GNPrintA/clsItem/ProcesaVariable	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20190311121520	#P7#=0	#P8#=9	.

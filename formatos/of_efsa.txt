@@ -1,0 +1,37 @@
+[SECTION CONFIG]    'Formato de impresion de oferta (EfsaPrint)
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 34     'Numero de lineas  totales
+IGNORACONTROL = F
+[/SECTION]
+
+[SECTION HEADER;TODO=T]
+                               $(NOMEMP;38)
+                              %(EF1)$(DESCTRANS;10) $(CODTRANS;3) #$(NUMTRANS;8)%(EF0)                  
+                                              	%(CD1)Fecha: $(FECHATRANS;10;dd-mm-yyyy)
+Descripcion: $(DESCTRANS;70)  
+Cliente:  $(CODCLI;3)  $(NOMCLI;30)                      Ruc: $(RUCCLI;15)
+Direccion: $(DIRCLI;30)					  Tel: $(TELCLI;10)  
+[/SECTION]
+
+%(SB1)# CODBODEGA CODIGO              ITEM                                    CANT                   P.UNIT            P.TOTAL%(SB0)
+[SECTION ITEM]   
+$(NUMLIN;2) $(CODBOD;9) $(CODITEM;19) $(DESCITEM;40) $(CANT;9) $(PU;17) $(PT;17)
+[/SECTION]
+%(SB1)                                                                                                                     %(SB0)
+                                 TOTAL:                                   $(CANTTTL;9)                   $(PTOTAL1;17)
+
+                                 %(SB1)RECARGOS/DESCUENTOS                    %                 VALOR              SUMA%(SB0)
+[SECTION RECARGO;LINEA=5]
+                                 $(DESC;40) $(PORCENT;9;2) $(VALOR;17) $(VALORACUM;17)
+[/SECTION]
+%(SB1)                                                                                                                     %(SB0)
+                                 %(EX1)%(EF1)TOTAL:	  $(PTOTAL2;14)%(EX0)%(EF0)
+
+
+
+
+
+
+
+              _____________                         ________________           DIGITADO POR: $(CODUSUARIO;10)
+                Visto Bueno                              Recibido

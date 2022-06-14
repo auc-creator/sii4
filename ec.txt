@@ -1,0 +1,4 @@
+'Archivo Padre para impresión de facturas y guias de remisión para Avila Ochoa
+[DOCUMENTO Egreso de Tesorería;Egreso/]
+[DOCUMENTO Cheque;Cheque/]
+

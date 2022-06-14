@@ -1,0 +1,24 @@
+[SECTION CONFIG]    'Formato de impresion para REPUESTOS Y ACCESORIOS DIESEL
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 30     'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+%(EF0)%(CD1)
+%(LIN;13)$(SPACE;0)   '5  milimetros  cada linea (considerar  7mm de traccion de papel)
+%(LIN;5.5)   '5  milimetros  cada linea (considerar  5mm de traccion de papel)
+[SECTION HEADER]
+$(SPACE;71)FC: $(NUMTRANS;7)
+$(SPACE;1)Cuenca$(SPACE;7)$(FECHATRANS;6;dd)$(SPACE;7)$(FECHATRANS;9;mmm)$(SPACE;18)$(FECHATRANS;9;yyyy)
+$(SPACE;7)$(NOMCLI;53)$(SPACE;13)$(RUCCLI;20)
+$(SPACE;12)$(DIRCLI;55)$(SPACE;11)$(TELCLI;15)
+$(SPACE;0)
+[/SECTION]
+%(LIN;7)    '7  milimetros  cada linea 
+[SECTION ITEM;LINEA=14;CAMBIOPAG=T]   ' Siempre  ocupa 8 lineas
+$(CANT;7;2)  $(CODITEM;9)  $(DESCITEM;30)  $(PORDESC;7;2)%    $(PU;11)    $(PT;12)
+[/SECTION]
+$(SPACE;65)Descuento      $(RECAR;12;2;DESCXTODO)'Descuento
+$(SPACE;80)$(PTOTAL1;12;2)
+$(SPACE;70)12$(SPACE;8)$(RECAR;12;2;IVA)'IVA
+$(SPACE;80)$(PTOTAL2;12)'Total factura

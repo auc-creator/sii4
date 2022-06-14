@@ -1,0 +1,24 @@
+[SECTION CONFIG]    'Formato de impresion Generico
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+%(LIN;5) $(SPACE;30) %(EF1) DISTABLASA%(EF0)   
+$(SPACE;5)%(EF1) Fecha : $(FECHATRANS;15;dd-mmmm-yyyy) %(EF0) $(SPACE;21)%(EF1) FACTURA No. $(CODTRANS;2) $(NUMTRANS;5) %(EF0)
+$(SPACE;5)%(EF1) Nombre: $(NOMCLI;30) %(EF0) $(SPACE;5) %(EF1) Ruc/CI: $(RUCCLI;15) %(EF0)
+$(SPACE;5)%(EF1) Dirección: $(DIRCLI;30) %(EF0) $(SPACE;3) %(EF1)Teléfono: $(TELCLI;15) %(EF0) %(CD1)%(LIN;4)
+[/SECTION]
+    ----------------------------------------------------------------------------------------------------------------------------
+         CODIGO                        DESCRIPCION                                     CANTIDAD        PRECIO U          TOTAL
+    ----------------------------------------------------------------------------------------------------------------------------
+[SECTION ITEM;LINEA=15;CAMBIOPAG=F]   
+        $(CODITEM;16)       $(DESCITEMIVA;55)   $(CANT;4;0)    $(PU;12;2)     $(PT;12;2)
+[/SECTION]
+     ----------------------------------------------------------------------------------------------------------------------------
+[SECTION RECARGO; LINEA=3;CAMBIOPAG=F]
+                                                                                                   $(DESC;10) $(SIGNO;1) $(PORCENT; 4;2)%  $(VALOR; 8;2)
+[/SECTION]
+
+$(SPACE;90) %(EF1) TOTAL : $(PTOTAL2;12;2) %(EF0)%(SPG)

@@ -1,0 +1,100 @@
+[SECTION CONFIG]    'Formato de impresion para PUNTO DE VENTA 29/09/04 jeaa
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = F
+MARGENIZQ=0
+[/SECTION]
+[SECTION HEADER]
+$(SPACE;7)$(NOMEMP;21)
+$(SPACE;5)CIERRE DE CAJA $(CODTRANS;5) #$(NUMTRANS;8)
+FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+POR CONCEPTO DE: 
+ $(DESCTRANS;60)
+[/SECTION]
+
+$(SPACE;2) GRUPO    TOTCONIVA     TOTSINIVA     DESC       SUBTOTAL    IVA        TOTAL
+[SECTION IVGRUPO; LINEA=0; CAMBIOPAG=F;PARAMETROS= 2]
+	$(CODGRUPO;10) $(DESCGRUPO;30)    $(PTCONIVA;10;2) $(PTSINIVA;10;2)    $(DESC;10;2)   $(SUBT;10;2) $(IVA;10;2) $(TOT;10;2)
+[/SECTION]
+
+$(DETCONIVA;10;2)$(SPACE;5) $(DETSINIVA;10;2)  $(SPACE;5) $(DETDESC;10;2) $(SPACE;5) $(DETSUBTOTAL;10;2) $(SPACE;5) $(DETIVA;10;2) $(SPACE;5) $(DETTOTAL;10;2)
+
+
+DETALLE EFECTIVO
+----------------------------------------
+     DENOMINACION      CANT      VALOR
+----------------------------------------
+[SECTION DETEFECTIVO; LINEA=0; CAMBIOPAG=F]
+$(DESC;20) $(CANT;6) $(VALOR;12;2)
+[/SECTION]
+
+DETALLE TARJETAS
+----------------------------------------
+#  TARJETA        CLIENTE     VALOR
+----------------------------------------
+[SECTION DETTARJETA; LINEA=0; CAMBIOPAG=F]
+$(CODTARJETA;10) $(TITULAR;20) $(AUTORIZA;10) $(VALOR;8;2)
+[/SECTION]
+
+DETALLE CHEQUES
+----------------------------------------
+#  BANCO        CLIENTE      VALOR
+----------------------------------------
+[SECTION DETCHEQUE; LINEA=0; CAMBIOPAG=F]
+$(CODBANCO;10) $(TITULAR;20) $(NUMCHE;10) $(VALOR;12;2)
+[/SECTION]
+
+DETALLE INGRESOS
+----------------------------------------
+DESCRIPCION
+TRANS      NOMBRE                  VALOR
+----------------------------------------
+[SECTION DETINGRESO; LINEA=0; CAMBIOPAG=F]
+$(DESC;35) 
+$(TRANS;6) $(NOMBRE;20) $(VALOR;12;2)
+[/SECTION]
+
+DETALLE CREDITOS
+----------------------------------------
+TRANS      NOMBRE                  VALOR
+----------------------------------------
+[SECTION DETVCREDITO; LINEA=0; CAMBIOPAG=F]
+$(DESC;35) 
+$(TRANS;6) $(NOMBRE;20) $(VALOR;12;2)
+[/SECTION]
+
+----------------------------------------
+TOTAL EFECTIVO:            $(TOTALDETEFECTIVO;12;2)
+TOTAL TARJETAS:            $(TOTALDETTARJETA;12;2)
+TOTAL CHEQUES :            $(TOTALDETCHEQUE;12;2)
+TOTAL MANUALES:            $(TOTALDETVMANUAL;12;2)
+TOTAL CREDITO :            $(TOTALDETVCREDITO;12;2)
+                    ____________________
+TOTAL INGRESOS:            $(TOTALDETINGRESOS;12;2)
+
+DETALLE EGRESOS
+----------------------------------------
+DESCRIPCION
+TRANS      NOMBRE                  VALOR
+----------------------------------------
+[SECTION DETEGRESO; LINEA=0; CAMBIOPAG=F]
+$(DESC;35) 
+$(TRANS;6) $(NOMBRE;20) $(VALOR;12;2)
+[/SECTION]
+                    ____________________
+TOTAL EGRESOS:            $(TOTALDETEGRESOS;12;2)
+
+TOTAL CIERRE:          $(TOTALCIERRECAJA;12;2)
+TOTAL CIERRE:          $(TOTALDEPOSITOCIERRECAJA;12;2)
+
+
+______________________	             
+$(CODUSUARIO;20)
+$(SPACE;1)
+$(DETALLETRANSIV;40)
+
+******* GRACIAS POR PREFERIRNOS *******
+*IMPRIME ISHIDA & ASOCIADOS 072833766**
+*********** 098499003 *****************
+*** SISTEMAS DE GESTION EMPRESARIAL ***

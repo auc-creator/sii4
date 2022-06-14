@@ -1,0 +1,35 @@
+ [SECTION CONFIG]    'Formato de impresion para LisLop S.A. Devolución de Cliente
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 34       'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION HEADER]
+%(CD1) %(LIN;6) 
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0) %(LIN;4.7)
+$(SPACE;7)$(FECHATRANS;2;dd) de $(FECHATRANS;10;mmmm) del $(FECHATRANS;4;yyyy)$(SPACE;45)$(CODTRANS;3) $(NUMTRANS;5)
+$(SPACE;10)$(NOMCLI;40)$(SPACE;30)$(RUCCLI;12)
+$(SPACE;10)$(DIRCLI;40)$(SPACE;20)$(TELCLI;10)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)
+[/SECTION]
+%(LIN;4.3)
+[SECTION ITEM;LINEA=19;CAMBIOPAG=F]
+  $(CANT;3;0)      $(DESCITEM;50)    $(PU;13;2) $(PT;13;2)
+[/SECTION]
+%(LIN;4)$(SPACE;80)$(PTOTAL1;12;2)'Subtotal
+$(SPACE;0)
+$(SPACE;80)$(RECAR;12;2;IVA)'Iva
+$(SPACE;0)
+$(SPACE;80)$(PTOTAL2;12,2)'Total de la Factura
+
+

@@ -1,0 +1,27 @@
+[SECTION CONFIG]    'Formato de impresion para VATEX
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 40      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION HEADER]
+%(EX0) %(CD1) %(LIN;6) 
+$(SPACE;70) $(CODTRANS;4) $(NUMTRANS;6) %(LIN;13) 
+$(SPACE;4) $(NOMCLI;30) $(SPACE;10) $(RUCCLI;15) $(SPACE;7) $(FECHATRANS;18;dd-mmmm-yyyy) %(LIN;4.5)
+$(SPACE;4) $(DIRCLI;30) $(SPACE;10) $(TELCLI;15) $(SPACE;10) $(CODVENDE;10) %(LIN;8)
+$(SPACE;0)%(LIN;4)
+[/SECTION]
+[SECTION ITEM;LINEA=17;CAMBIOPAG=F]   
+     $(CODITEM;6)    $(DESCITEM;35)    $(CANT;4;0)      $(PU;8;2)     $(PT;8;2)
+[/SECTION]%(LIN;0.5)
+[SECTION DOCXCOBRAR; LINEA=0; CAMBIOPAG=F]
+             $(DESC; 20):   $(VALOR; 8; 2)
+[/SECTION]%(LIN;0.1)
+[SECTION RECARGO; LINEA=1] 'Recargos/descuentos
+                                                         $(PORCENT;4;0%):                $(VALOR;8;2)
+[/SECTION]
+$(SPACE;74) $(PRTOTAL;11;2)
+$(SPACE;66)12%      $(RECAR;11;2;IVA)
+$(SPACE;67)%(EF1) $(PTOTAL2;11;2)%(EF0) %(EF0) %(LIN;0.5)
+RECIBIDO:$(EFECTIVO;8;2)   VUELTO:$(VUELTO;8;2)
+%(SPG)

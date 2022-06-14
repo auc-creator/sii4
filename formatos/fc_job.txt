@@ -1,0 +1,31 @@
+[SECTION CONFIG]    'Formato de impresion para JOB
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 30     'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+%(EF0)%(CD1)%(LIN;3.2) 'deja una linea de  4 milimetros
+ 
+%(LIN;5)   '5  milimetros  cada linea (considerar  5mm de traccion de papel)
+[SECTION HEADER]
+ 
+ 
+ 
+$(SPACE;110)FC: $(NUMTRANS;7)
+ 
+ 
+ 
+$(SPACE;15)$(NOMCLI;60)$(SPACE;22)$(RUCCLI;20)
+$(SPACE;18)$(DIRCLI;60)$(SPACE;15)$(TELCLI;15)
+$(SPACE;14)$(CIUCLI;20) $(SPACE;30)$(FECHATRANS;12;dd/mm/yyy) $(SPACE;33) $(FVENCIPRI;12;dd/mm/yyy)
+$(SPACE;22)$(CODDOCXCOBPRI;10)$(SPACE;80) $(CODVENDE;4) $(NOMVENDE;20)
+[/SECTION]
+ %(LIN;4)    '4  milimetros  cada linea 
+[SECTION ITEM;LINEA=11;CAMBIOPAG=T]   ' Siempre  ocupa 8 lineas
+$(SPACE;7)$(CANT;18;2) $(CODITEM;11) $(DESCITEM;60) $(PU;15)     $(PT;15)
+[/SECTION]
+%(LIN;5)$(SPACE;112)$(PTOTAL1;15)'Subtotal
+$(SPACE;112)$(RECAR;15;2;DESC)'Descuento
+$(SPACE;101)12$(SPACE;8)$(RECAR;15;2;IVA)'IVA
+$(SPACE;112)$(PTOTAL2;15)'Total factura
+%(SPG)

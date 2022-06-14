@@ -1,0 +1,15 @@
+[SECTION CONFIG]    'Impresión de cheque en tamaño normal
+MODO = T
+NUMLINEA = 8
+IGNORARCONTROL = F
+[/SECTION]
+[SECTION CHEQUE;LINEA=1;CAMBIOPAG=T;Parametros=CH-E]
+%(LIN;5) $(LF) 
+$(LF) 
+$(LF)
+%(EF1)     $(NOMBRE;25)            $(VALOR;18;2 )%(LIN;6.3) %(EF0)
+%(EF1)     $(VALORL;50) %(EF0)
+%(EF1)Cuenca, $(FECHA;25) %(EF0)
+$(LF) 
+$(LF)
+[/SECTION]

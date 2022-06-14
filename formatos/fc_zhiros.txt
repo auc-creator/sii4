@@ -1,0 +1,37 @@
+[SECTION CONFIG]    'Formato de impresion para ZHIROS  usa DESC por Item
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 64     'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+%(LIN;5.30)    '5  milimetros  cada linea (considerar  5mm de traccion de papel)
+
+
+
+
+
+%(CD1)
+[SECTION HEADER]
+%(LIN;4)$(SPACE;76)Num:$(NUMTRANS;8)
+$(SPACE;7)$(FECHATRANS;30;dd  mmmm  yyyy)$(SPACE;52)$(FVENCIPRI;12;dd/mm/yy)
+$(SPACE;14)$(NOMCLI;42)   $(RUCCLI;15)$(SPACE;14)$(CODCLI;8) 
+$(SPACE;14)$(DIRCLI;42)$(SPACE;31)$(CIUCLI;15)
+$(SPACE;16)$(NUMDOCREF;15)$(SPACE;56)$(TELCLI;10)  
+$(SPACE;92)$(NOMDOCXCOBPRI;20)
+$(SPACE;8)$(DESCTRANS;40)$(SPACE;39)$(NOMVENDE;20)%(LIN;5)
+[/SECTION]
+
+
+%(CD1)
+[SECTION ITEM;LINEA=25;CAMBIOPAG=T]   'El  espacio  no  coje en  secction items 
+$(SPACE;3)$(CODITEM;15) $(DESCITEM;46)       $(CANT;10) $(PU;16) $(PORDESC;3;0) $(PTR;17)
+[/SECTION]
+ 
+$(SPACE;103)$(PRTOTAL;16;2)%(LIN;4)'Subtotal
+$(SPACE;103)$(RECAR;16;2;DESC) 'Descuento
+$(SPACE;103)$(VNETO;16;2;DESC)	'Valor Neto
+$(SPACE;103)$(RECAR;16;2;IVA) 'IVA
+$(SPACE;103)$(VNETO;16;2;DESC;IVA)'Valor Neto
+$(SPACE;103)$(RECAR;16;2;TRANS) 'Transporte
+
+$(SPACE;103)$(PTOTAL2;16;2)

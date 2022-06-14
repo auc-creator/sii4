@@ -1,0 +1,21 @@
+[SECTION CONFIG]    'Formato de impresion para ItalIberica
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:IR]
+[/SECTION]
+[SECTION HEADER]
+%(CD1) %(LIN;7.5) $(SPACE;0)
+$(SPACE;115) $(CODTRANS;7) $(NUMTRANS;5)
+$(SPACE;0)
+$(SPACE;10) $(DIRPROV;45) $(SPACE;25) $(FECHATRANS;25;DD/MMMM/YYYY)
+%(LIN;8)$(SPACE;33) $(NOMPROV;65)$(SPACE;15) $(RUCPROV;25) %(LIN;2)
+$(SPACE;0) %(LIN;5)
+[/SECTION]
+[SECTION RETENCION;LINEA=2;CAMBIOPAG=T;PARAMETROS=IR]
+       $(NUMDOCREF;7)       $(BASE;12;4) $(PORCENT;10)%         $(DESC;45)             $(HABER;12;4)
+[/SECTION]
+$(SPACE;137) $(TOTRET;12,4)  %(CD0)
+%(LIN;5) $(SPACE;0)

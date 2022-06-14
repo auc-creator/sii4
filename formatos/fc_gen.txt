@@ -1,0 +1,48 @@
+[SECTION CONFIG]    'Formato de impresion de factura
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 34     'Numero de lineas  totales
+IGNORACONTROL = F
+[/SECTION]
+
+[SECTION HEADER;TODO=T]
+    %(EX1)$(NOMEMP;28)%(EX0)    pagina: $(NUMPAG)
+Tel: $(TL1EMP;10)      Tel2:  $(TL2EMP;10)
+Direccion: $(DR1EMP;30)
+RUC: $(RUCEMP;15)
+----------------------------------------------
+
+%(EX1)%(EF1)$(CODTRANS;3) #$(NUMTRANS;8)%(EX0)%(EF0)     
+%(CD1)
+Fecha: $(FECHATRANS;10;dd/mm/yyyy)
+Descripcion: $(DESCTRANS;70)  Asiento: $(CODASIENTO;10) 
+Cliente:  $(CODCLI;3)  $(NOMCLI;30)  Tel: $(TELCLI;10)  
+Ruc: $(RUCCLI;15)
+' %(CD0)
+[/SECTION]
+
+     Item                                   Cantidad  UNI  P.U.   P.T.
+[SECTION ITEM;LINEA=15;CAMBIOPAG=T]   ' Siempre  ocupa 15 lineas
+  $(NUMLIN;3) $(CODITEM;10) $(DESCITEM;30) $(CANT;8) $(UNIDAD;3) $(PU;14) $(PT;14) $(PORIVA;5) 
+[/SECTION]
+		SUBTOTAL:  $(PTOTAL1;14)
+
+[SECTION RECARGO;LINEA=5]
+					$(DESC;25) $(SIGNO;1)  $(VALOR;14) 
+[/SECTION]
+				TOTAL: $(PTOTAL2;14)
+
+
+Forma de Pago
+[SECTION DOCXCOBRAR]
+   $(COD;5) $(NUMDOC;10) $(OBSERVA;20) $(FVENCI;10;dd/mm/yy) $(VALOR;14)
+ [/SECTION]
+Asiento
+[SECTION ASIENTO]
+  $(CODCTA;20) $(NOMCTA;30) $(DESC;20) $(DEBE;10) $(HABER;10)
+[/SECTION]
+                                               TDebe:     $(ASIDTTL) THaber  $(ASIHTTL) 
+
+Total  banco $(BCODTTL)
+
+              _____________                              ________________                     ____________    
+                 Vendedor                                          Bodega                             Cliente

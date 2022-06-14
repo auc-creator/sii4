@@ -1,0 +1,36 @@
+[SECTION CONFIG]    'Formato de impresion para Klingohr
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+MARGENIZQ=1
+[/SECTION]                                     
+[SECTION HEADER]
+$(SPACE;14)%(EX0)%(EF1)$(NOMEMP;45)%(EF0)%(EX0)%(LIN;4.5)
+$(SPACE;15)%(EX1)%(EF1) R.U.C.$(RUCEMP;25)%(EF0)%(EX0)
+$(SPACE;5)%(EF1)Dirección: $(DR1EMP;30) $(SPACE;1)Telefax: $(TL1EMP;10) %(EF0) %(LIN;3.5) 
+$(SPACE;5)
+$(SPACE;20)%(EF1)$(NOMGNTRANS;15) No.$(NUMSERIEEST;3)-$(NUMSERIEPUN;3)-$(NUMTRANSERIE;9)%(EF0) 
+$(SPACE;10)%(CD1)%(EF1) AUTORIZACION SRI: $(NUMAUTOSRI;10) $(SPACE;10) VALIDAD DESDE: $(FECHAAUTO; 12; dd/mm/yyyy) $(SPACE;10) CADUCA: $(FECHACADU; 12; dd/mm/yyyy)%(EF0)%(LIN;3) 
+$(SPACE;0)%(CD1)
+$(SPACE;3) %(EF1)Fecha    : $(FECHATRANS;30;dd-mmmm-yyyy)  Hora:$(FGRABADO;10;HH:mm:ss) %(EF0) $(SPACE;10) Cod.Cliente: $(CODCLI;10) %(LIN;3)
+$(SPACE;3) %(EF1)Cliente  : $(NOMCLI;45)%(EF0)  $(SPACE;12) %(EF1)R.U.C.     : $(RUCCLI;13)%(EF0)
+$(SPACE;3) Dirección: $(DIRCLI;45) $(SPACE;13) Teléfono   : $(TELCLI;8) 
+$(SPACE;3)
+$(SPACE;3) Motivo: $(DESCTRANS;120)  
+$(SPACE;3) Trans. Modificada: %(EF1)$(NUMDOCREF; 20)  $(SPACE;3) %(EF0)Tipo Trans. Modificada: %(EF1)$(DESCTIPOTRANSAFECTASRI; 15) %(EF0) 
+$(SPACE;0) %(LIN;2)%(CD1)
+%(SB1)CODIGO          CODIGO BARRAS       CANT.      DESCRIPCION                                                  V.UNIT.       V.TOTAL%(SB0)%(LIN;3.5)
+[/SECTION]
+[SECTION ITEM;LINEA=14;CAMBIOPAG=F]   
+$(CODITEM; 15) $(CODALTITEM; 13)  $(CANT;8;0)    $(DESCITEMIVA;60) $(PU;10;3) $(PT;12;2)
+[/SECTION]
+$(SPACE;106) SUBTOTAL:  $(PTOTAL1;12;2) %(LIN;4)
+$(SPACE;105) DESCUENTO:  $(RECAR;12;2;DESC) 
+$(SPACE;98) BASE  I.V.A. 0 %:  $(TOTALSINIVA;12;2)
+$(SPACE;98) BASE  I.V.A. $(PORCENTAJEIVA;2)%:  $(TOTALCONIVA;12;2)
+$(SPACE;101)    I.V.A. $(PORCENTAJEIVA;2)%:  $(RECAR;12;2;IVA)
+$(SPACE;5)_______________       __________________$(SPACE;65)TOTAL:  %(EF1)$(PTOTAL2;12;2)%(EF0)%(LIN;3.4)
+$(SPACE;5) Recibí Conforme           Entregado por      $(SPACE;25) VENDEDOR: $(CODVENDE;15) $(SPACE;5) USUARIO : $(CODUSUARIO;15)
+$(SPACE;0)  %(CD1)%(EF1)$(ESCOPIA;100;ORIGINAL CLIENTE/COPIA EMISOR/SEGUNDA COPIA SIN DERECHO A CREDITO TRIBUTARIO;COPIA SIN DERECHO A CREDITO TRIBUTARIO) %(EF0)%(LIN;5)
+%(SPG)

@@ -1,0 +1,36 @@
+[SECTION CONFIG]    'EGRESO DE TESORERIA LIBRERIAS VATEX
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+[/SECTION]
+%(CD1) %(LIN;4)
+%(EX1)%(EF1)$(NOMEMP;30)%(EF0)%(EX0)
+$(SPACE;2) %(EF1)EGRESO DE TESORERIA $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)%(LIN;3.5)
+--------------------------------------------------------------------------------------------------------------------
+$(SPACE;2)FECHA          : Cuenca,$(FECHATRANS;20;dd-mmm-yyyy) $(SPACE;30)Dig: $(CODUSUARIO;12)  
+$(SPACE;2)DOCUMENTO REFERENCIA: $(NUMDOCREF;10)%(LIN;3)
+--------------------------------------------------------------------------------------------------------------------
+#  BANCO                     DOC                    Nombre                         F.VENCIM.      VALOR   OBSERVACION
+--------------------------------------------------------------------------------------------------------------------
+[/SECTION]
+[SECTION BANCO;NUMLINEA=0;CAMBIOPAG=F]
+$(NUMLIN;2) $(NOMBANCO;25) $(NOMTIPODOC;15)$(NUMDOC;7) $(NOMBRE;30) $(FVENCI;10;dd/mm/yy) $(VALOR;10;2) $(OBSERVA;10)
+[/SECTION]
+_____________________________________________________________________________________________________________________
+
+%(EX1)Total Cancelacion:%(EX0)                                                          %(EX1)$(BCOTTL;10;2)%(EX0)
+
+--------------------------------------------------------------------------------------------------------------------
+#  COD.CUENTA      CUENTA                    DESCRIPCION                                  DEBE              HABER
+--------------------------------------------------------------------------------------------------------------------
+[SECTION ASIENTO]
+$(NUMLIN;2) $(CODCTA;15) $(NOMCTA;25) $(DESC;30) $(DEBE;18;2) $(HABER;18;2)
+[/SECTION]
+__________________________________________________________________________________________________________________
+   TOTAL:                                                                   $(ASIDTTL;18;2) $(ASIHTTL;18;2)
+
+
+
+											         
+$(SPACE;20)______________$(SPACE;12)_______________$(SPACE;12)____________
+                    Contabilidad               Auditoria               Recibiconforme

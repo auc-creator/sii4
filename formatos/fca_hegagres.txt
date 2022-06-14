@@ -1,0 +1,32 @@
+[SECTION CONFIG]    'Formato de impresion para HEGAGRES
+MODO = T   ' Indica  si es modo texto  o grafico
+NUMLINEA = 33     'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+%(LIN;5)    '5  milimetros  cada linea (considerar  5mm de traccion de papel)
+
+
+[SECTION HEADER]
+%(EF1)$(SPACE;57)$(CODTRANS;4)$(NUMTRANS;8)%(EF0)
+%(LIN;4)%(EF0)%(CD1)$(SPACE;9)Fecha:   $(FECHATRANS;22;dd-mmm-yyyy)
+$(SPACE;9)Cliente: $(NOMCLI;40)$(SPACE;26)Dirección: $(DIRCLI;30)
+$(SPACE;9)Ruc:     $(RUCCLI;15)$(SPACE;51)Vendedor:  $(CODVENDE;15)
+$(SPACE;84)Teléfono:  $(TELCLI;15)
+$(SPACE;9)F.Venci: $(FVENCIPRI;15;dd-mmm-yyyy)$(SPACE;51)NUMDOCREF: $(NUMDOCREF;20)
+
+[/SECTION]
+
+%(SB1)CODITEM$(SPACE;14)CANTIDAD$(SPACE;5)UNIDAD$(SPACE;4)DESCRIPCION$(SPACE;41)PRECIO UNITARIO PRECIO TOTAL%(SB0)
+[SECTION ITEM;LINEA=13;CAMBIOPAG=T]   ' Siempre  ocupa 8 lineas
+$(CODITEM;20) $(CANT;10;2)   $(UNIDAD;6;2)    $(DESCITEM;50)  $(PU;16) $(PT;18)
+[/SECTION]
+$(SPACE;94)SUMAN              $(PTOTAL1;16;2) %(LIN;4)'Subtotal
+$(SPACE;94)DESCUENTO          $(RECAR;16;2;DESC)'Descuento
+$(SPACE;94)SUBTOTAL           $(VNETO;16;2;DESC)'Valor Neto
+$(SPACE;94)IVA                $(RECAR;16;2;IVA)'IVA
+SON: $(PTOTAL2;90;2;L)'Total en Letras
+$(SPACE;94)TOTAL              $(PTOTAL2;16)'Total factura
+
+
+

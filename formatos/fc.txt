@@ -1,0 +1,36 @@
+[SECTION CONFIG]    'Formato de impresion para Artesano
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]                                     
+[SECTION HEADER]
+%(CD1)%(EF0)
+%(LIN;6) $(SPACE;0)
+$(SPACE;0)
+$(SPACE;0)%(LIN;7)
+$(SPACE;0)%(LIN;4.5)
+$(SPACE;12) $(CODCLI;7) $(SPACE;55) $(DIRCLI;40)
+$(SPACE;14) $(NOMCLI;40) $(SPACE;21)$(TELCLI;20)
+$(SPACE;12) $(RUCCLI;20) $(SPACE;41) CUENCA $(SPACE;25)Dig: $(CODUSUARIO;12) %(LIN;3.5)
+$(SPACE;0)
+$(SPACE;10)$(FECHATRANS;17;dd/mm/yy)%(LIN;0.1)
+[/SECTION]
+[SECTION DOCXCOBRAR;LINEA=1;CAMBIOPAG=F]   'OCUPA SOLAMENTE UNA LINEA
+			                     $(FVENCI;20;dd-mmmm-yyyy)              $(DESC;20) 
+[/SECTION] %(LIN;0.1)
+                                                                                                               $(CODVENDE;12)
+$(SPACE;0) %(LIN;6) 
+$(SPACE;0) %(LIN;3.5) 
+[SECTION ITEM;LINEA=14;CAMBIOPAG=F]   
+  $(CODITEM;15)  $(DESCITEMIVA;53)           $(CANT;8;0)       $(PU;12;2)    $(PT;12;2)   $(PORDESC;2)%
+[/SECTION]
+$(SPACE;0)%(LIN;1) 
+$(SPACE;79) $(SPACE;34)  $(PTOTAL1;12;2)
+$(SPACE;79) $(SPACE;34)  $(TOTALCONIVA;12;2)
+$(SPACE;79) $(SPACE;34)  $(RECAR;12;2;DESCXTODO)
+$(SPACE;115) $(TOTALSINIVA;12;2)
+$(SPACE;112)12  $(RECAR;12;2;IVA)
+$(SPACE;115) $(PTOTAL2;12;2)
+$(SPACE;0)%(LIN;6.4) 
+$(SPACE;0)

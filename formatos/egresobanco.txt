@@ -1,0 +1,35 @@
+
+[SECTION CONFIG]    'EGRESO DE TESORERIA PAGO
+MODO = T
+NUMLINEA = 40
+IGNORARCONTROL = F
+[/SECTION]
+
+[SECTION HEADER;TODO=T]
+   %(EF1)$(NOMEMP;30) %(EF0)
+   %(EF1)EGRESO DE BANCOS $(CODTRANS;5) #$(NUMTRANS;8)%(EF0)
+ $(SPACE;50)   %(CD1) FECHA:$(FECHATRANS;15;dd-mmm-yyyy)
+  Por concepto de:   $(DESCTRANS;30) %(CD0)
+[/SECTION]
+%(CD1) %(LIN;4.5)
+  TOTAL: %(EF1)$(BCOTTL;15;2)  %(EF0) 
+$(SPACE;0)
+        BANCO		DOC	       Nombre                         F.VENCIM.		VALOR	       OBSERVACION              
+------------------------------------------------------------------------------------------------------------------------------------
+[SECTION BANCO;NUMLINEA=2;CAMBIOPAG=F]
+$(NOMBANCO;20) $(NOMTIPODOC;15)$(NUMDOC;7) $(NOMBRE;25)  $(FVENCI;10;dd/mm/yy)$(VALOR;18;2)  $(OBSERVA;20)
+[/SECTION]
+______________________________________________________________________________________________________________________________
+
+%(EF1) Asiento Contable %(EF0)
+  COD.CUENTA	CUENTA		         DESCRIPCION				       DEBE	           HABER      
+------------------------------------------------------------------------------------------------------------------------------------
+[SECTION ASIENTO]
+   $(CODCTA;15)  $(NOMCTA;25) $(DESC;30) $(DEBE;18;2) $(HABER;19;2)
+[/SECTION]
+                                                                     TOTAL:  $(ASIDTTL;18;2) $(ASIHTTL;19;2)
+
+
+											         Digitado por: $(CODUSUARIO;10)
+          ______________	               ____________	
+		 Visto Bueno		         Recibido	

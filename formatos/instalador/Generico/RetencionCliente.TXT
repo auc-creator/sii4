@@ -1,0 +1,39 @@
+[SECTION CONFIG]    'Formato de impresion para DISTABLASA
+MODO = T            'Indica  si es modo texto  o grafico
+NUMLINEA = 150      'Numero de lineas  totales
+IGNORACONTROL = F
+HEADERTODO = T
+[/SECTION]
+[SECTION PARAMETROS;TOTRET:TODOS]
+[/SECTION]
+[SECTION HEADER]
+%(CD1)%(LIN;7)%(EX1)$(SPACE;20)$(NOMEMP;55)%(EX0)      
+
+%(LIN;3.5)%(EF1)$(SPACE;43)RETENCION AL CLIENTE $(CODTRANS;3)- $(NUMTRANS;5)%(EF0)
+$(SPACE;0)%(LIN;4)
+$(SPACE;5)CLIENTE: $(NOMPROV;45) $(SPACE;5) FECHA: $(FECHATRANS;12;DD/MMMM/YYYY) 
+$(SPACE;5)No. R.U.C. $(RUCPROV;20) $(SPACE;25)DIRECCION: $(DIRPROV;40)
+$(SPACE;5)DOCUMENTO DE REFERENCIA: %(LIN;0.5)
+[/SECTION]
+[SECTION RETENCION;LINEA=1;CAMBIOPAG=F]
+                              $(NUMDOC;20) 	'Número del documento de referencia (el que origina la retención)
+[/SECTION]
+$(SPACE;0)
+$(SPACE;0) 
+$(SPACE;0)  %(LIN;3.5)
+--------------------------------------------------------------------------------------------------------------------
+PERIODO         IMPONIBLE                   IMPUESTO                      PORCENTAJE                  VALOR
+--------------------------------------------------------------------------------------------------------------------
+[SECTION RETENCION;LINEA=6;CAMBIOPAG=F;PARAMETROS=TODOS]
+  2003      $(BASE;12;2)           $(DESC;25)            $(PORCENT;4;2)%                   $(DEBE;13;2)
+[/SECTION]
+--------------------------------------------------------------------------------------------------------------------
+COD. CUENTA         CUENTA                 DESCRIPCION                           DEBE                  HABER
+--------------------------------------------------------------------------------------------------------------------
+[SECTION ASIENTO;LINEA=6;CAMBIOPAG=F;PARAMETROS=TODOS]
+$(CODCTA;10)        $(NOMCTA;10)       $(DESC;30)        $(DEBE;13;2)          $(HABER;13;2)
+[/SECTION]
+--------------------------------------------------------------------------------------------------------------------
+$(SPACE;73)TOTAL DE LA RETENCION: $(TOTRET;13;2)
+$(SPACE;0)
+%(SPG)
